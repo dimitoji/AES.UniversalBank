@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Online Portal", "Online Portal", "{C84040E4-44F2-4B89-B441-67A9A5ED2DC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Online Payment System", "Online Payment System", "{28DB75EC-1F3E-43F5-A50C-0FE7AE584FA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging Services", "Messaging Services", "{AE759A5D-7C40-4BE9-9D4E-B34273828553}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External System Services", "External System Services", "{72273B49-5BB6-4872-B339-936C29197685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.UniversalBank.External.CICS", "AES.UniversalBank.External.CICS\AES.UniversalBank.External.CICS.csproj", "{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.UniversalBank.External.Loans", "AES.UniversalBank.External.Loans\AES.UniversalBank.External.Loans.csproj", "{C2DB8AC5-F1C0-4350-9887-FB13FE31FC73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.UniversalBank.Common.Entities", "AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj", "{465FAFA4-B92C-415E-8882-E585AC7216D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{B208ED00-6F49-4035-9D62-33853C8C1E9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.UniversalBank.External.Directory", "AES.UniversalBank.External.Directory\AES.UniversalBank.External.Directory.csproj", "{050B8A00-18D0-4399-A5D3-49F7D5F8F1DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2DB8AC5-F1C0-4350-9887-FB13FE31FC73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2DB8AC5-F1C0-4350-9887-FB13FE31FC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2DB8AC5-F1C0-4350-9887-FB13FE31FC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2DB8AC5-F1C0-4350-9887-FB13FE31FC73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{465FAFA4-B92C-415E-8882-E585AC7216D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{465FAFA4-B92C-415E-8882-E585AC7216D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{465FAFA4-B92C-415E-8882-E585AC7216D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{465FAFA4-B92C-415E-8882-E585AC7216D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050B8A00-18D0-4399-A5D3-49F7D5F8F1DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050B8A00-18D0-4399-A5D3-49F7D5F8F1DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050B8A00-18D0-4399-A5D3-49F7D5F8F1DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050B8A00-18D0-4399-A5D3-49F7D5F8F1DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875} = {72273B49-5BB6-4872-B339-936C29197685}
+		{C2DB8AC5-F1C0-4350-9887-FB13FE31FC73} = {72273B49-5BB6-4872-B339-936C29197685}
+		{465FAFA4-B92C-415E-8882-E585AC7216D1} = {B208ED00-6F49-4035-9D62-33853C8C1E9B}
+		{050B8A00-18D0-4399-A5D3-49F7D5F8F1DE} = {72273B49-5BB6-4872-B339-936C29197685}
+	EndGlobalSection
+EndGlobal
