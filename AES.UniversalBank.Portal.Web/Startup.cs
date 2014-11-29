@@ -8,6 +8,8 @@ namespace AES.UniversalBank.Portal.Web
     {
         public void Configuration(IAppBuilder app)
         {
+            ConfigureIoC(app);
+
             ConfigureAuth(app);
         }
     }

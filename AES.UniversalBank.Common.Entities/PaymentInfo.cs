@@ -8,5 +8,7 @@ namespace AES.UniversalBank.Common.Entities
 {
     public class PaymentInfo
     {
+        public string Id { get; set; }
+        public string Description { get; set; }
     }
 }

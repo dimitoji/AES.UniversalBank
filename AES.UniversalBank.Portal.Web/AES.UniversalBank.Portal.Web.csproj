@@ -39,6 +39,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.3\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc.Owin">
+      <HintPath>..\packages\Autofac.Mvc5.Owin.3.1.0\lib\net45\Autofac.Integration.Mvc.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin">
+      <HintPath>..\packages\Autofac.Owin.3.1.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -157,9 +169,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.IoC.Autofac.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,6 +240,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Info\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -236,6 +251,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj">
+      <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
+      <Name>AES.UniversalBank.Common.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Payments.Service\AES.UniversalBank.Payments.Service.csproj">
+      <Project>{face98af-b4d0-40bb-999e-df3ca4e545c1}</Project>
+      <Name>AES.UniversalBank.Payments.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Portal.Authentication\AES.UniversalBank.Portal.Authentication.csproj">
+      <Project>{149063e5-92fd-48bc-abc9-4b4c93dc9515}</Project>
+      <Name>AES.UniversalBank.Portal.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Portal.BusinessLogic.Impl\AES.UniversalBank.Portal.BusinessLogic.Impl.csproj">
+      <Project>{cdfc4954-ffd9-494c-beb7-ac652716b237}</Project>
+      <Name>AES.UniversalBank.Portal.BusinessLogic.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Portal.BusinessLogic\AES.UniversalBank.Portal.BusinessLogic.csproj">
+      <Project>{d0fd9771-23a3-4656-838c-24acdf31c271}</Project>
+      <Name>AES.UniversalBank.Portal.BusinessLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

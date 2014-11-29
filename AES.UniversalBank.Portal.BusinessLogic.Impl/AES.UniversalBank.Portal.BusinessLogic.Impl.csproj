@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{149063E5-92FD-48BC-ABC9-4B4C93DC9515}</ProjectGuid>
+    <ProjectGuid>{CDFC4954-FFD9-494C-BEB7-AC652716B237}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AES.UniversalBank.Portal.Authentication</RootNamespace>
-    <AssemblyName>AES.UniversalBank.Portal.Authentication</AssemblyName>
+    <RootNamespace>AES.UniversalBank.Portal.BusinessLogic.Impl</RootNamespace>
+    <AssemblyName>AES.UniversalBank.Portal.BusinessLogic.Impl</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILoginManager.cs" />
+    <Compile Include="AccountsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -47,9 +47,21 @@
       <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
       <Name>AES.UniversalBank.Common.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.External.CICS\AES.UniversalBank.External.CICS.csproj">
+      <Project>{e5029aa3-5d1c-4e51-a9d9-9fb9749ee875}</Project>
+      <Name>AES.UniversalBank.External.CICS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AES.UniversalBank.External.Directory\AES.UniversalBank.External.Directory.csproj">
       <Project>{050b8a00-18d0-4399-a5d3-49f7d5f8f1de}</Project>
       <Name>AES.UniversalBank.External.Directory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.External.Loans\AES.UniversalBank.External.Loans.csproj">
+      <Project>{c2db8ac5-f1c0-4350-9887-fb13fe31fc73}</Project>
+      <Name>AES.UniversalBank.External.Loans</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Portal.BusinessLogic\AES.UniversalBank.Portal.BusinessLogic.csproj">
+      <Project>{d0fd9771-23a3-4656-838c-24acdf31c271}</Project>
+      <Name>AES.UniversalBank.Portal.BusinessLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
