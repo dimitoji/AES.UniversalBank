@@ -13,7 +13,7 @@ namespace AES.UniversalBank.Portal.Web
             var builder = new ContainerBuilder();
 
             //Services
-            builder.RegisterType<Authentication.Impl.LoginManager>().As<Authentication.ILoginManager>();
+            builder.RegisterType<Authentication.Impl.DirectoryManager>().As<Authentication.IDirectoryManager>();
             builder.RegisterType<BusinessLogic.Impl.AccountsManager>().As<BusinessLogic.IAccountsManager>();
 
             // Controllers

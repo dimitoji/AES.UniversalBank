@@ -51,10 +51,6 @@
       <Project>{e5029aa3-5d1c-4e51-a9d9-9fb9749ee875}</Project>
       <Name>AES.UniversalBank.External.CICS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.External.Directory\AES.UniversalBank.External.Directory.csproj">
-      <Project>{050b8a00-18d0-4399-a5d3-49f7d5f8f1de}</Project>
-      <Name>AES.UniversalBank.External.Directory</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AES.UniversalBank.External.Loans\AES.UniversalBank.External.Loans.csproj">
       <Project>{c2db8ac5-f1c0-4350-9887-fb13fe31fc73}</Project>
       <Name>AES.UniversalBank.External.Loans</Name>

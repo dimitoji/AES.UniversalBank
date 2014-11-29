@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AES.UniversalBank.Portal.Authentication.Impl
 {
-    public class LoginManager : ILoginManager
+    public class DirectoryManager : IDirectoryManager
     {
         public bool Login(string login, string password)
         {

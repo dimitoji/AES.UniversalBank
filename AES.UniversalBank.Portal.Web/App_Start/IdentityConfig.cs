@@ -94,9 +94,9 @@ namespace AES.UniversalBank.Portal.Web
     // Configure el administrador de inicios de sesión que se usa en esta aplicación.
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
-        private Authentication.ILoginManager _loginManager;
+        private Authentication.IDirectoryManager _loginManager;
 
-        public ApplicationSignInManager(ApplicationUserManager userManager, Authentication.ILoginManager loginManager, IAuthenticationManager authenticationManager)
+        public ApplicationSignInManager(ApplicationUserManager userManager, Authentication.IDirectoryManager loginManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
             this._loginManager = loginManager;
@@ -126,7 +126,7 @@ namespace AES.UniversalBank.Portal.Web
         {
             return new ApplicationSignInManager(
                 context.GetUserManager<ApplicationUserManager>(),
-                context.GetAutofacLifetimeScope().Resolve<Authentication.ILoginManager>(),
+                context.GetAutofacLifetimeScope().Resolve<Authentication.IDirectoryManager>(),
                 context.Authentication);
         }
     }

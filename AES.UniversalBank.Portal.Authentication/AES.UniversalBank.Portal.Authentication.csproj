@@ -39,17 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILoginManager.cs" />
+    <Compile Include="IDirectoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj">
       <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
       <Name>AES.UniversalBank.Common.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.External.Directory\AES.UniversalBank.External.Directory.csproj">
-      <Project>{050b8a00-18d0-4399-a5d3-49f7d5f8f1de}</Project>
-      <Name>AES.UniversalBank.External.Directory</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
