@@ -171,16 +171,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.IoC.Autofac.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\UserAccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InfoController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\AccountInfoController.cs" />
+    <Compile Include="Controllers\_AuthorizedControllerBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -220,30 +219,25 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\UserAccount\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\UserAccount\ConfirmEmail.cshtml" />
+    <Content Include="Views\UserAccount\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\UserAccount\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\UserAccount\ForgotPassword.cshtml" />
+    <Content Include="Views\UserAccount\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\UserAccount\Login.cshtml" />
+    <Content Include="Views\UserAccount\Register.cshtml" />
+    <Content Include="Views\UserAccount\ResetPassword.cshtml" />
+    <Content Include="Views\UserAccount\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\UserAccount\SendCode.cshtml" />
+    <Content Include="Views\UserAccount\VerifyCode.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Info\Index.cshtml" />
+    <Content Include="Views\AccountInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\_AuthorizedControllerBase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -260,6 +254,10 @@
     <ProjectReference Include="..\AES.UniversalBank.Payments.Service\AES.UniversalBank.Payments.Service.csproj">
       <Project>{face98af-b4d0-40bb-999e-df3ca4e545c1}</Project>
       <Name>AES.UniversalBank.Payments.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Portal.Authentication.Impl\AES.UniversalBank.Portal.Authentication.Impl.csproj">
+      <Project>{a0bc934e-b635-4112-a273-660672f4dba0}</Project>
+      <Name>AES.UniversalBank.Portal.Authentication.Impl</Name>
     </ProjectReference>
     <ProjectReference Include="..\AES.UniversalBank.Portal.Authentication\AES.UniversalBank.Portal.Authentication.csproj">
       <Project>{149063e5-92fd-48bc-abc9-4b4c93dc9515}</Project>

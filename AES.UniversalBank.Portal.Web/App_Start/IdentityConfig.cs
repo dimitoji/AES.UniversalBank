@@ -5,12 +5,15 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
+using Autofac;
+using Autofac.Integration.Owin;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using AES.UniversalBank.Portal.Web.Models;
+using Microsoft.Owin.Security.Provider;
 
 namespace AES.UniversalBank.Portal.Web
 {
@@ -91,9 +94,12 @@ namespace AES.UniversalBank.Portal.Web
     // Configure el administrador de inicios de sesión que se usa en esta aplicación.
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
-        public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
+        private Authentication.ILoginManager _loginManager;
+
+        public ApplicationSignInManager(ApplicationUserManager userManager, Authentication.ILoginManager loginManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
+            this._loginManager = loginManager;
         }
 
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
@@ -101,9 +107,27 @@ namespace AES.UniversalBank.Portal.Web
             return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
         }
 
+        public override async Task<SignInStatus> PasswordSignInAsync(string email, string password, bool isPersistent, bool shouldLockout)
+        {
+            if (this._loginManager.Login(email, password))
+            {
+                var user = await UserManager.FindByEmailAsync(email);
+                if (user != null)
+                {
+                    await this.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    return SignInStatus.Success;
+                }
+            }
+
+            return SignInStatus.Failure;
+        }
+
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
-            return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+            return new ApplicationSignInManager(
+                context.GetUserManager<ApplicationUserManager>(),
+                context.GetAutofacLifetimeScope().Resolve<Authentication.ILoginManager>(),
+                context.Authentication);
         }
     }
 }

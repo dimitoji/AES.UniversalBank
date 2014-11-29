@@ -10,13 +10,13 @@ namespace AES.UniversalBank.Portal.BusinessLogic.Impl
 {
     public class AccountsManager : IAccountsManager
     {
-        public AccountInfo GetAccountInfo(string login)
+        public AccountInfo GetAccountInfo(string userName)
         {
             return new AccountInfo
             {
                 Customer = new Customer
                 {
-                    Name = "Juan Perez",
+                    Email = userName,
                 },
                 Accounts = new List<Account>
                 {

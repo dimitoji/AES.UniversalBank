@@ -8,6 +8,6 @@ namespace AES.UniversalBank.Portal.BusinessLogic
 {
     public interface IAccountsManager
     {
-        Models.AccountInfo GetAccountInfo(string login);
+        Models.AccountInfo GetAccountInfo(string userName);
     }
 }
