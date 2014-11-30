@@ -9,7 +9,7 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
     [Schema(@"http://www.universalbank.com/aes/broker/schemas",@"PaymentList")]
     [System.SerializableAttribute()]
     [SchemaRoots(new string[] {@"PaymentList"})]
-    public sealed class Loan_Copia : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    public sealed class Payment : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;
@@ -39,7 +39,7 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
   </xs:element>
 </xs:schema>";
         
-        public Loan_Copia() {
+        public Payment() {
         }
         
         public override string XmlContent {

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://www.universalbank.com/aes/broker/schemas" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://www.universalbank.com/aes/broker/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <b:schemaInfo root_reference="AccountInfoRequest" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RequestType">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Account" />
+        <xs:enumeration value="Customer" />
+        <xs:enumeration value="Loan" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AccountInfoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CustomerId" type="xs:string" />
+        <xs:element name="Type" type="RequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="RequestType">
+    <xs:restriction base="xs:token" />
+  </xs:simpleType>
+</xs:schema>

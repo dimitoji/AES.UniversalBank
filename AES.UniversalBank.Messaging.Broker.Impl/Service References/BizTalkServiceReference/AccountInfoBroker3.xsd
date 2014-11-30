@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.universalbank.com/aes/broker/schemas" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.universalbank.com/aes/broker/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <b:schemaInfo root_reference="PaymentList" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Payment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Id" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Payment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
