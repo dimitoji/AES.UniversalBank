@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.UniversalBank.Portal.Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.UniversalBank.Portal.Authentication.Impl", "AES.UniversalBank.Portal.Authentication.Impl\AES.UniversalBank.Portal.Authentication.Impl.csproj", "{A0BC934E-B635-4112-A273-660672F4DBA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AES.UniversalBank.Messaging.BrokerSchemas", "AES.UniversalBank.Messaging.BrokerSchemas\AES.UniversalBank.Messaging.BrokerSchemas.btproj", "{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,12 @@ Global
 		{A0BC934E-B635-4112-A273-660672F4DBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0BC934E-B635-4112-A273-660672F4DBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0BC934E-B635-4112-A273-660672F4DBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,5 +116,6 @@ Global
 		{149063E5-92FD-48BC-ABC9-4B4C93DC9515} = {C84040E4-44F2-4B89-B441-67A9A5ED2DC1}
 		{CDFC4954-FFD9-494C-BEB7-AC652716B237} = {C84040E4-44F2-4B89-B441-67A9A5ED2DC1}
 		{A0BC934E-B635-4112-A273-660672F4DBA0} = {C84040E4-44F2-4B89-B441-67A9A5ED2DC1}
+		{A0DA25D5-2D0C-4906-984A-0DD7663F68D6} = {AE759A5D-7C40-4BE9-9D4E-B34273828553}
 	EndGlobalSection
 EndGlobal
