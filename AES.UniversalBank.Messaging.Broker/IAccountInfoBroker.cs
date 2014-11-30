@@ -8,9 +8,9 @@ namespace AES.UniversalBank.Messaging.Broker
 {
     public interface IAccountInfoBroker
     {
-        Common.Entities.Customer GetCustomerProfile(string customerId);
-        IList<Common.Entities.Account> GetCustomerAccounts(string customerId);
-        IList<Common.Entities.Loan> GetCustomerLoans(string customerId);
-        IList<Common.Entities.PaymentInfo> GetCustomerPayments(string customerId);
+        Common.Entities.Customer GetCustomerProfile(AccountInfoRequest request);
+        IList<Common.Entities.Account> GetCustomerAccounts(AccountInfoRequest request);
+        IList<Common.Entities.Loan> GetCustomerLoans(AccountInfoRequest request);
+        IList<Common.Entities.Payment> GetCustomerPayments(AccountInfoRequest request);
     }
 }

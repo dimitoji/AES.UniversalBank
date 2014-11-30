@@ -62,7 +62,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="AccountInfoRequest.xsd">
+    <Schema Include="_Request.xsd">
       <TypeName>AccountInfoRequest</TypeName>
       <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
       <SubType>Task</SubType>
@@ -87,6 +87,13 @@
       <TypeName>Loan</TypeName>
       <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
       <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Payment.xsd">
+      <SubType>Task</SubType>
+      <TypeName>Loan_Copia</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
     </Schema>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,10 +6,10 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [SchemaType(SchemaTypeEnum.Document)]
-    [Schema(@"http://www.universalbank.com/aes/broker/schemas",@"AccountList")]
+    [Schema(@"http://www.universalbank.com/aes/broker/schemas",@"PaymentList")]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"AccountList"})]
-    public sealed class Account : Microsoft.XLANGs.BaseTypes.SchemaBase {
+    [SchemaRoots(new string[] {@"PaymentList"})]
+    public sealed class Loan_Copia : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
         private static object _rawSchema;
@@ -19,40 +19,27 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
 <xs:schema xmlns=""http://www.universalbank.com/aes/broker/schemas"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" attributeFormDefault=""qualified"" elementFormDefault=""qualified"" targetNamespace=""http://www.universalbank.com/aes/broker/schemas"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
   <xs:annotation>
     <xs:appinfo>
-      <b:schemaInfo root_reference=""AccountList"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" />
+      <b:schemaInfo root_reference=""PaymentList"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" />
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name=""AccountType"">
-    <xs:simpleType>
-      <xs:restriction base=""xs:string"">
-        <xs:enumeration value=""Savings"" />
-        <xs:enumeration value=""Checking"" />
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name=""Account"">
+  <xs:element name=""Payment"">
     <xs:complexType>
       <xs:sequence>
         <xs:element name=""Id"" type=""xs:string"" />
-        <xs:element name=""Type"" type=""AccountType"" />
-        <xs:element name=""BalanceValue"" nillable=""true"" type=""xs:decimal"" />
-        <xs:element name=""BalanceDate"" nillable=""true"" type=""xs:dateTime"" />
+        <xs:element name=""Description"" type=""xs:string"" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:simpleType name=""AccountType"">
-    <xs:restriction base=""xs:string"" />
-  </xs:simpleType>
-  <xs:element name=""AccountList"">
+  <xs:element name=""PaymentList"">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs=""0"" maxOccurs=""unbounded"" ref=""Account"" />
+        <xs:element minOccurs=""0"" maxOccurs=""unbounded"" ref=""Payment"" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>";
         
-        public Account() {
+        public Loan_Copia() {
         }
         
         public override string XmlContent {
@@ -64,7 +51,7 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
         public override string[] RootNodes {
             get {
                 string[] _RootElements = new string [1];
-                _RootElements[0] = "AccountList";
+                _RootElements[0] = "PaymentList";
                 return _RootElements;
             }
         }

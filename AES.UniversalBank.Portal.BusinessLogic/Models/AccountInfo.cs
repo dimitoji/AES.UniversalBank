@@ -11,13 +11,13 @@ namespace AES.UniversalBank.Portal.BusinessLogic.Models
     {
         public Common.Entities.Customer Customer { get; set; }
         public IList<Common.Entities.Account> Accounts { get; set; }
-        public IList<Common.Entities.PaymentInfo> Payments { get; set; }
+        public IList<Common.Entities.Payment> Payments { get; set; }
         public IList<Common.Entities.Loan> Loans { get; set; }
 
         public AccountInfo()
         {
             this.Accounts = new List<Account>();
-            this.Payments = new List<PaymentInfo>();
+            this.Payments = new List<Payment>();
             this.Loans = new List<Loan>();
         }
     }

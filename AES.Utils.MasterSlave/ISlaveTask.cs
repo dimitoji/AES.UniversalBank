@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AES.Utils.MasterSlave
 {
-    public interface _ISlaveTask<TIn, TOut>
+    public interface ISlaveTask<TIn, TOut>
     {
         TOut Run(TIn parameter);
     }

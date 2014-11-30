@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMasterStrategy.cs" />
+    <Compile Include="IMasterSlaveStrategy.cs" />
     <Compile Include="ISlaveTask.cs" />
     <Compile Include="Impl\ParallelMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,9 +6,9 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [SchemaType(SchemaTypeEnum.Document)]
-    [Schema(@"http://www.universalbank.com/aes/broker/schemas",@"LoanList")]
+    [Schema(@"http://www.universalbank.com/aes/broker/schemas",@"Loan")]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"LoanList"})]
+    [SchemaRoots(new string[] {@"Loan"})]
     public sealed class Loan : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
@@ -16,12 +16,7 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
         
         [System.NonSerializedAttribute()]
         private const string _strSchema = @"<?xml version=""1.0"" encoding=""utf-16""?>
-<xs:schema xmlns=""http://www.universalbank.com/aes/broker/schemas"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" attributeFormDefault=""qualified"" elementFormDefault=""qualified"" targetNamespace=""http://www.universalbank.com/aes/broker/schemas"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
-  <xs:annotation>
-    <xs:appinfo>
-      <b:schemaInfo root_reference=""LoanList"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" />
-    </xs:appinfo>
-  </xs:annotation>
+<xs:schema xmlns=""http://www.universalbank.com/aes/broker/schemas"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" targetNamespace=""http://www.universalbank.com/aes/broker/schemas"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
   <xs:element name=""Loan"">
     <xs:complexType>
       <xs:sequence>
@@ -32,13 +27,6 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
         <xs:element name=""PaymentValue"" type=""xs:decimal"" />
         <xs:element name=""NextPaymentValue"" nillable=""true"" type=""xs:decimal"" />
         <xs:element name=""TotalPaymentValue"" nillable=""true"" type=""xs:decimal"" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name=""LoanList"">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs=""0"" maxOccurs=""unbounded"" ref=""Loan"" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,7 +44,7 @@ namespace AES.UniversalBank.Messaging.BrokerSchemas {
         public override string[] RootNodes {
             get {
                 string[] _RootElements = new string [1];
-                _RootElements[0] = "LoanList";
+                _RootElements[0] = "Loan";
                 return _RootElements;
             }
         }

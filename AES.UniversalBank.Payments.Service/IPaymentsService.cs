@@ -9,7 +9,7 @@ namespace AES.UniversalBank.Payments.Service
 {
     public interface IPaymentsService
     {
-        IList<Common.Entities.PaymentInfo> GetCutomerPaymentInfos(string customerId);
-        void SavePaymentInfo(Common.Entities.PaymentInfo info);
+        IList<Common.Entities.Payment> GetCutomerPaymentInfos(string customerId);
+        void SavePaymentInfo(Common.Entities.Payment info);
     }
 }

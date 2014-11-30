@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AES.UniversalBank.Common.Entities
+﻿namespace AES.UniversalBank.Messaging.Broker
 {
     public class AccountInfoRequest
     {
@@ -16,6 +10,7 @@ namespace AES.UniversalBank.Common.Entities
             Account,
             Customer,
             Loan,
+            Payment,
         }
     }
 }
