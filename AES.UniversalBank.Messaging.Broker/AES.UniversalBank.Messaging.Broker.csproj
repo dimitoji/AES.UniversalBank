@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CDFC4954-FFD9-494C-BEB7-AC652716B237}</ProjectGuid>
+    <ProjectGuid>{BC2C8CA4-EC68-4C65-974E-EDDA3AD6748E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AES.UniversalBank.Portal.BusinessLogic.Impl</RootNamespace>
-    <AssemblyName>AES.UniversalBank.Portal.BusinessLogic.Impl</AssemblyName>
+    <RootNamespace>AES.UniversalBank.Messaging.Broker</RootNamespace>
+    <AssemblyName>AES.UniversalBank.Messaging.Broker</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,33 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountsManager.cs" />
+    <Compile Include="IAccountInfoBroker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj">
       <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
       <Name>AES.UniversalBank.Common.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.External.CICS\AES.UniversalBank.External.CICS.csproj">
-      <Project>{e5029aa3-5d1c-4e51-a9d9-9fb9749ee875}</Project>
-      <Name>AES.UniversalBank.External.CICS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.External.Loans\AES.UniversalBank.External.Loans.csproj">
-      <Project>{c2db8ac5-f1c0-4350-9887-fb13fe31fc73}</Project>
-      <Name>AES.UniversalBank.External.Loans</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.Messaging.Broker\AES.UniversalBank.Messaging.Broker.csproj">
-      <Project>{bc2c8ca4-ec68-4c65-974e-edda3ad6748e}</Project>
-      <Name>AES.UniversalBank.Messaging.Broker</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.Portal.BusinessLogic\AES.UniversalBank.Portal.BusinessLogic.csproj">
-      <Project>{d0fd9771-23a3-4656-838c-24acdf31c271}</Project>
-      <Name>AES.UniversalBank.Portal.BusinessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.Utils.MasterSlave\AES.Utils.MasterSlave.csproj">
-      <Project>{909ee4f1-a85c-4094-a622-94c4e56e227b}</Project>
-      <Name>AES.Utils.MasterSlave</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

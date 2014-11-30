@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AccountInfoRequest.cs" />
     <Compile Include="AccountTransaction.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Loan.cs" />
