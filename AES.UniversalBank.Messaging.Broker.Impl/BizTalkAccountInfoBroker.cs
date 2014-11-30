@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AES.UniversalBank.Common.Entities;
 
 namespace AES.UniversalBank.Messaging.Broker.Impl
 {
@@ -61,18 +62,69 @@ namespace AES.UniversalBank.Messaging.Broker.Impl
             }
             catch (Exception ex)
             {
-                return null;
+                return new Account[0].ToList();
             }
         }
 
         public IList<Common.Entities.Loan> GetCustomerLoans(AccountInfoRequest request)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var client = new BizTalkServiceReference.AccountInfoBrokerClient();
+
+                // Invokes the biztalk service
+                var accounts = client.GetCustomerLoans(
+                    new BizTalkServiceReference.AccountInfoRequest
+                    {
+                        CustomerId = request.CustomerId,
+                        Type = request.Type.ToString(),
+                    });
+
+                return accounts.Select(
+                    l => new Common.Entities.Loan
+                    {
+                        Id = l.Id,
+                        StartDate = l.StartDate,
+                        Payoff = l.Payoff,
+                        PaymentCount = l.PaymentCount,
+                        PaymentValue = l.PaymentValue,
+                        NextPaymentValue = l.NextPaymentValue,
+                        TotalPaymentValue = l.TotalPaymentValue,
+                    }
+                ).ToList();
+            }
+            catch (Exception ex)
+            {
+                return new Loan[0].ToList();
+            }
         }
 
         public IList<Common.Entities.Payment> GetCustomerPayments(AccountInfoRequest request)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var client = new BizTalkServiceReference.AccountInfoBrokerClient();
+
+                // Invokes the biztalk service
+                var accounts = client.GetCustomerPayments(
+                    new BizTalkServiceReference.AccountInfoRequest
+                    {
+                        CustomerId = request.CustomerId,
+                        Type = request.Type.ToString(),
+                    });
+
+                return accounts.Select(
+                    p => new Common.Entities.Payment
+                    {
+                        Id = p.Id,
+                        Description = p.Description,
+                    }
+                ).ToList();
+            }
+            catch (Exception ex)
+            {
+                return new Payment[0].ToList();
+            }
         }
     }
 }

@@ -12,9 +12,18 @@ namespace AES.UniversalBank.Portal.Web
         {
             var builder = new ContainerBuilder();
 
-            //Services
-            builder.RegisterType<Authentication.Impl.DirectoryManager>().As<Authentication.IDirectoryManager>();
-            builder.RegisterType<BusinessLogic.Impl.AccountsManager>().As<BusinessLogic.IAccountsManager>();
+            //Services and dependencies
+            builder.RegisterType<Authentication.Impl.DirectoryManager>()
+                .As<Authentication.IDirectoryManager>();
+
+            builder.RegisterType<Utils.MasterSlave.Impl.ParallelMasterSlave>()
+                .As<Utils.MasterSlave.IMasterSlaveStrategy>();
+
+            builder.RegisterType<Messaging.Broker.Impl._DebugAccountInfoBroker>()
+                .As<Messaging.Broker.IAccountInfoBroker>();
+
+            builder.RegisterType<BusinessLogic.Impl.AccountsManager>()
+                .As<BusinessLogic.IAccountsManager>();
 
             // Controllers
             builder.RegisterControllers(typeof(Startup).Assembly);

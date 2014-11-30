@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AES.UniversalBank.Common.Entities;
+using AES.UniversalBank.Common.Trace;
 using AES.UniversalBank.Messaging.Broker;
 
 namespace AES.UniversalBank.Portal.BusinessLogic.Impl.SlaveTasks
@@ -25,6 +26,7 @@ namespace AES.UniversalBank.Portal.BusinessLogic.Impl.SlaveTasks
                 Type = AccountInfoRequest.RequestType.Customer,
             };
 
+            Trace.Write("Obteniendo Cliente via Broker...");
             return this._accountInfoBroker.GetCustomerProfile(request);
         }
     }

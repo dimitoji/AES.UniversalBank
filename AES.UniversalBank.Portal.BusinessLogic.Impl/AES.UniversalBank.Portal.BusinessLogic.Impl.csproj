@@ -51,6 +51,10 @@
       <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
       <Name>AES.UniversalBank.Common.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Common.Trace\AES.UniversalBank.Common.Trace.csproj">
+      <Project>{752e8bef-bc56-4755-9f61-d5989f73a126}</Project>
+      <Name>AES.UniversalBank.Common.Trace</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AES.UniversalBank.External.CICS\AES.UniversalBank.External.CICS.csproj">
       <Project>{e5029aa3-5d1c-4e51-a9d9-9fb9749ee875}</Project>
       <Name>AES.UniversalBank.External.CICS</Name>

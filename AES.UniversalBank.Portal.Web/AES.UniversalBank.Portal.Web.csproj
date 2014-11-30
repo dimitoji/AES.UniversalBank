@@ -251,6 +251,14 @@
       <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
       <Name>AES.UniversalBank.Common.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Messaging.Broker.Impl\AES.UniversalBank.Messaging.Broker.Impl.csproj">
+      <Project>{965bc932-0482-4c04-a225-bca6b936984e}</Project>
+      <Name>AES.UniversalBank.Messaging.Broker.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Messaging.Broker\AES.UniversalBank.Messaging.Broker.csproj">
+      <Project>{bc2c8ca4-ec68-4c65-974e-edda3ad6748e}</Project>
+      <Name>AES.UniversalBank.Messaging.Broker</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AES.UniversalBank.Payments.Service\AES.UniversalBank.Payments.Service.csproj">
       <Project>{face98af-b4d0-40bb-999e-df3ca4e545c1}</Project>
       <Name>AES.UniversalBank.Payments.Service</Name>
@@ -270,6 +278,10 @@
     <ProjectReference Include="..\AES.UniversalBank.Portal.BusinessLogic\AES.UniversalBank.Portal.BusinessLogic.csproj">
       <Project>{d0fd9771-23a3-4656-838c-24acdf31c271}</Project>
       <Name>AES.UniversalBank.Portal.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.Utils.MasterSlave\AES.Utils.MasterSlave.csproj">
+      <Project>{909ee4f1-a85c-4094-a622-94c4e56e227b}</Project>
+      <Name>AES.Utils.MasterSlave</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

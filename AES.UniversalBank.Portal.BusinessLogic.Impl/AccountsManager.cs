@@ -37,7 +37,10 @@ namespace AES.UniversalBank.Portal.BusinessLogic.Impl
             var resultObjects = this._masterSlaveStrategy.Process(tasks, userName);
 
             // Genera la entidad completa agregando los valores recuperados
-            var enumerable = resultObjects as object[] ?? resultObjects.ToArray();
+            var enumerable = resultObjects as object[] ??
+                resultObjects
+                .SelectMany(o => o is IEnumerable<object> ? ((IEnumerable<object>)o).ToArray() : new []{ o })
+                .ToArray();
             return new AccountInfo
             {
                 Customer = enumerable.OfType<Customer>().FirstOrDefault(),
