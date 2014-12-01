@@ -10,6 +10,12 @@ namespace AES.UniversalBank.Payments.BusinessLogic
         IList<Common.Entities.Payment> GetCustomerPayments(string customerId);
 
         [OperationContract]
-        void SavePayment(Common.Entities.Payment info);
+        Common.Entities.Payment GetPayment(string id);
+
+        [OperationContract]
+        void SavePayment(Common.Entities.Payment payment);
+
+        [OperationContract]
+        IList<Common.Entities.PaymentRecord> GetPaymentRecords(string id);
     }
 }

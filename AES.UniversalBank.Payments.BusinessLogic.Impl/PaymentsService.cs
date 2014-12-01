@@ -13,12 +13,39 @@ namespace AES.UniversalBank.Payments.BusinessLogic.Impl
     {
         public IList<Payment> GetCustomerPayments(string customerId)
         {
-            return new Payment[0].ToList();
+            return new []
+            {
+                new Payment
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Description = "Test Payment",
+                    StartDate = new DateTime(2014, 1, 1),
+                    Recurring = true,
+                    DayOfMonth = DateTime.Today.Day,
+                }   
+            }.ToList();
+        }
+
+        public Payment GetPayment(string id)
+        {
+            return new Payment
+            {
+                Id = Guid.NewGuid().ToString(),
+                Description = "Test Payment",
+                StartDate = new DateTime(2014, 1, 1),
+                Recurring = true,
+                DayOfMonth = DateTime.Today.Day,
+            };
         }
 
         public void SavePayment(Payment info)
         {
             //TODO: Implement
+        }
+
+        public IList<PaymentRecord> GetPaymentRecords(string id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

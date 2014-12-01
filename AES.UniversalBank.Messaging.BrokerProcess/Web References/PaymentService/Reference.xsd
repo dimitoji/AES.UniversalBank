@@ -8,9 +8,27 @@
   </xs:complexType>
   <xs:complexType name="Payment">
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DayOfMonth" type="xs:int" />
       <xs:element minOccurs="1" maxOccurs="1" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Recurring" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentRecord" nillable="true" type="tns:ArrayOfPaymentRecord" />
+  <xs:complexType name="ArrayOfPaymentRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentRecord" nillable="true" type="tns:PaymentRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentRecord">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PaymentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProcessDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Payment" nillable="true" type="tns:Payment" />
+  <xs:element name="PaymentRecord" nillable="true" type="tns:PaymentRecord" />
 </xs:schema>

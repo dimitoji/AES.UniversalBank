@@ -1,0 +1,498 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="4b9e8fd0-1fac-4b87-83d0-c1db1aec3f52" LowerBound="1.1" HigherBound="101.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="AES.UniversalBank.Messaging.PaymentProcess" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="512fc78b-d15c-48e4-995e-bb737556b33f" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="RequestPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="a2944d96-43bb-4854-8bc5-f0f822fc6557" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Submit" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="13bad6c7-bffc-4cfb-a4cd-b740e4f55f0e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.70">
+                    <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.PaymentSchemas.PaymentRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Solicitud" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0e1a7748-b3cd-474a-9c6c-46c68f3f0b46" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ResponsePortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="5ed4fb3b-0988-4bd1-9e5a-10e6c570952c" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendResult" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a0d23174-8e63-45e1-8cf2-07f706fe93d5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.71">
+                    <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.PaymentSchemas.PaymentResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Solicitud" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="ccb0b72c-c064-4880-9364-c8ea081dfdb6" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AuthPaymentPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e9d774d6-69e3-43a1-a734-d0ef31fc9e1d" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Process" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="02de006a-e01a-4f76-989e-a6ddd29ed528" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.74">
+                    <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Solicitud" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b5136233-598c-4c3c-b2ab-d222a0977c61" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AuthResponsePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="84ca8aa6-7566-4c20-9b36-019b14196e7a" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Process" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="84e0f63d-0c87-49df-b41b-10278d831804" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.75">
+                    <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Solicitud" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="94d1cc45-6eb3-426d-aba0-149c8bef317f" ParentLink="Module_CorrelationType" LowerBound="32.1" HigherBound="36.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PaymentTypeCorrelation" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="8aae6d93-3077-4fb5-9dbc-f62adfc13756" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.64">
+                <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.PaymentSchemas.PaymentSetId" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="PropertyRef" OID="6427e541-c345-468d-9b6b-0e89ac92e110" ParentLink="CorrelationType_PropertyRef" LowerBound="34.66" HigherBound="34.120">
+                <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.PaymentSchemas.PaymentType" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="ea33d3fd-6e9b-4206-a788-39f50a882fb5" ParentLink="Module_ServiceDeclaration" LowerBound="36.1" HigherBound="100.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessPayment" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="CorrelationDeclaration" OID="e193e266-bba5-4222-a07a-3080b4059005" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentProcess.PaymentTypeCorrelation" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="paymentType" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="684fb5a2-9d16-4139-8795-ec7c05c7dc6a" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="66.60" HigherBound="66.82">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="3be5729c-e47a-4e1a-9822-f956dff9c4c1" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="4d205192-6527-4820-bdc3-2d7c2f36fc3a" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="71.75" HigherBound="71.86">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="ae3d1b12-fa3c-4090-a06b-154e5042d71d" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="965be058-2b3a-4507-9ced-f633861d8e3a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentSchemas.PaymentRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="aa8c6266-81b0-407a-9988-73de56c2adf4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgAuthResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8ac4bd19-9061-446a-adb2-4de9ce776fc2" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgAuthRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6b031742-8c1f-4839-902d-099bea347991" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentSchemas.PaymentResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgResult" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="66f5fe12-51a5-4492-b663-41d96595be29" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="465e33eb-a15a-4f11-b7a4-c084fce28e25" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="56.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="RequestPort" />
+                    <om:Property Name="MessageName" Value="msgRequest" />
+                    <om:Property Name="OperationName" Value="Submit" />
+                    <om:Property Name="OperationMessageName" Value="Solicitud" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="95dbb4cc-e62f-4d0a-a2a2-572c3a8de7e2" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="65.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructAuthMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="266e8289-b400-4a39-a2ca-12b6d1fe796d" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
+                        <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.PaymentSchemas.RequestToAuthRequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MapRequest" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="299fd01a-fe1b-4c3f-bc18-73ac71ab9733" ParentLink="Transform_InputMessagePartRef" LowerBound="60.111" HigherBound="60.121">
+                            <om:Property Name="MessageRef" Value="msgRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="d9e52583-c4a0-4024-a001-9d96ca0fc90e" ParentLink="Transform_OutputMessagePartRef" LowerBound="60.28" HigherBound="60.42">
+                            <om:Property Name="MessageRef" Value="msgAuthRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="b1b69d2c-c3c1-4ae3-bea4-3ea49bb9e603" ParentLink="ComplexStatement_Statement" LowerBound="61.1" HigherBound="64.1">
+                        <om:Property Name="Expression" Value="msgAuthRequest(AES.UniversalBank.Messaging.PaymentSchemas.PaymentSetId) = msgRequest.Id;&#xD;&#xA;msgAuthRequest(AES.UniversalBank.Messaging.PaymentSchemas.PaymentType) = msgRequest.PayeeType;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Set Context" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="59e29475-697d-4852-99d8-774f56688105" ParentLink="Construct_MessageRef" LowerBound="57.23" HigherBound="57.37">
+                        <om:Property Name="Ref" Value="msgAuthRequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="3be5729c-e47a-4e1a-9822-f956dff9c4c1" ParentLink="ServiceBody_Statement" LowerBound="65.1" HigherBound="67.1">
+                    <om:Property Name="PortName" Value="AuthRequestPort" />
+                    <om:Property Name="MessageName" Value="msgAuthRequest" />
+                    <om:Property Name="OperationName" Value="Process" />
+                    <om:Property Name="OperationMessageName" Value="Solicitud" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send Auth" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Listen" OID="22197604-291d-4ae1-99b8-14a9def3f65d" ParentLink="ServiceBody_Statement" LowerBound="67.1" HigherBound="98.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Wait" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="ListenBranch" OID="a7ff68c8-4c37-4da0-979f-3aca54310e3a" ParentLink="ReallyComplexStatement_Branch" LowerBound="67.1" HigherBound="67.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ListenBranch_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="06fbd10d-c09c-4aa7-9889-94b7c2a8cd75" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="79.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructResult" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="8b1c6e3d-32a6-42a9-b71b-d0c6f3cde5bf" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="78.1">
+                                <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.PaymentSchemas.AuthResponseToResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Map Default" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="4a3b3e79-9a82-40cc-9d7e-5a72fe8e9bc4" ParentLink="Transform_InputMessagePartRef" LowerBound="77.116" HigherBound="77.131">
+                                    <om:Property Name="MessageRef" Value="msgAuthResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_5" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="c73a2f05-c0ff-42d0-8d6c-808e4860e337" ParentLink="Transform_OutputMessagePartRef" LowerBound="77.36" HigherBound="77.45">
+                                    <om:Property Name="MessageRef" Value="msgResult" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_6" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="14674aaf-bd11-4225-91e9-7e2f1ea1c8af" ParentLink="Construct_MessageRef" LowerBound="74.31" HigherBound="74.40">
+                                <om:Property Name="Ref" Value="msgResult" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="15ef10f3-3611-4fd0-bfac-600530ae6834" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="81.1">
+                            <om:Property Name="PortName" Value="SendResultPort" />
+                            <om:Property Name="MessageName" Value="msgResult" />
+                            <om:Property Name="OperationName" Value="SendResult" />
+                            <om:Property Name="OperationMessageName" Value="Solicitud" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send Result" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Receive" OID="ae3d1b12-fa3c-4090-a06b-154e5042d71d" ParentLink="ListenBranch_Statement" LowerBound="70.1" HigherBound="71.87">
+                            <om:Property Name="Activate" Value="False" />
+                            <om:Property Name="PortName" Value="AuthResponsePort" />
+                            <om:Property Name="MessageName" Value="msgAuthResponse" />
+                            <om:Property Name="OperationName" Value="Process" />
+                            <om:Property Name="OperationMessageName" Value="Solicitud" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive Internal Result" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="ListenBranch" OID="ad870cad-62fe-47cf-854e-bf79ba49a1a9" ParentLink="ReallyComplexStatement_Branch" LowerBound="67.1" HigherBound="67.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ListenBranch_2" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="bfe8fe10-213f-480d-b164-60e66dd038f7" ParentLink="ComplexStatement_Statement" LowerBound="85.1" HigherBound="94.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructResult" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="13a5f829-97a6-4bd6-9191-8f2019b9cdf6" ParentLink="Construct_MessageRef" LowerBound="86.31" HigherBound="86.40">
+                                <om:Property Name="Ref" Value="msgResult" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="8767f9e3-cb13-479c-897d-9b1bcd0f49d4" ParentLink="ComplexStatement_Statement" LowerBound="88.1" HigherBound="90.1">
+                                <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.PaymentSchemas.RequestToResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Map Default" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="2e3f61bf-904d-41e9-b94f-262281e6b66b" ParentLink="Transform_InputMessagePartRef" LowerBound="89.111" HigherBound="89.121">
+                                    <om:Property Name="MessageRef" Value="msgRequest" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="ed47d4bb-7d1c-4037-82b0-34e4769a3c99" ParentLink="Transform_OutputMessagePartRef" LowerBound="89.36" HigherBound="89.45">
+                                    <om:Property Name="MessageRef" Value="msgResult" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="27af5edc-ef8d-4bf1-baa3-746d7f877715" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="93.1">
+                                <om:Property Name="Expression" Value="msgResult.Success = false;&#xD;&#xA;msgResult.Message = &quot;Timeout for payment expired&quot;;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="Set Data" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="497b7867-ff2e-47d4-be38-7a7d88b15b23" ParentLink="ComplexStatement_Statement" LowerBound="94.1" HigherBound="96.1">
+                            <om:Property Name="PortName" Value="SendResultPort" />
+                            <om:Property Name="MessageName" Value="msgResult" />
+                            <om:Property Name="OperationName" Value="SendResult" />
+                            <om:Property Name="OperationMessageName" Value="Solicitud" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send Result" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Delay" OID="1891d577-e8fe-44ae-b070-fc34fbceaf39" ParentLink="ListenBranch_Statement" LowerBound="82.1" HigherBound="83.56">
+                            <om:Property Name="Timeout" Value="System.TimeSpan.FromMinutes(10)" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Timeout" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d2905d1c-d687-46c6-beec-4ad0cc9881c3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="39.1" HigherBound="41.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentProcess.RequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RequestPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="3d3ba31b-19b3-4f5d-beab-61502189ad7b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="39.1" HigherBound="40.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5da05ed4-0e38-489f-b30d-3f657e0f31cc" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="43.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="20" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentProcess.AuthPaymentPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AuthRequestPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="163bcbf8-68c0-4b40-97d8-7f2c7c907c72" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b4c2bb17-88c7-4a72-97de-8a989f369574" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="45.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="22" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentProcess.AuthResponsePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AuthResponsePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="3a849101-d80e-4cdc-bd8a-dac1f3832d17" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b9a929c8-5a50-47fc-acbc-33d54bf039b3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="45.1" HigherBound="47.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="58" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.PaymentProcess.ResponsePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendResultPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="499258b7-c389-4a4e-8c27-31a51c0af238" ParentLink="PortDeclaration_CLRAttribute" LowerBound="45.1" HigherBound="46.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module AES.UniversalBank.Messaging.PaymentProcess
+{
+    internal porttype RequestPortType
+    {
+        oneway Submit
+        {
+            AES.UniversalBank.Messaging.PaymentSchemas.PaymentRequest
+        };
+    };
+    internal porttype ResponsePortType
+    {
+        oneway SendResult
+        {
+            AES.UniversalBank.Messaging.PaymentSchemas.PaymentResponse
+        };
+    };
+    internal porttype AuthPaymentPortType
+    {
+        oneway Process
+        {
+            AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentRequest
+        };
+    };
+    internal porttype AuthResponsePortType
+    {
+        oneway Process
+        {
+            AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentResponse
+        };
+    };
+    internal correlationtype PaymentTypeCorrelation
+    {
+        AES.UniversalBank.Messaging.PaymentSchemas.PaymentSetId, AES.UniversalBank.Messaging.PaymentSchemas.PaymentType
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessPayment
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements RequestPortType RequestPort;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses AuthPaymentPortType AuthRequestPort;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements AuthResponsePortType AuthResponsePort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ResponsePortType SendResultPort;
+        correlation PaymentTypeCorrelation paymentType;
+        message AES.UniversalBank.Messaging.PaymentSchemas.PaymentRequest msgRequest;
+        message AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentResponse msgAuthResponse;
+        message AES.UniversalBank.Messaging.PaymentSchemas.AuthPaymentRequest msgAuthRequest;
+        message AES.UniversalBank.Messaging.PaymentSchemas.PaymentResponse msgResult;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("465e33eb-a15a-4f11-b7a4-c084fce28e25")]
+            activate receive (RequestPort.Submit, msgRequest);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("95dbb4cc-e62f-4d0a-a2a2-572c3a8de7e2")]
+            construct msgAuthRequest
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("266e8289-b400-4a39-a2ca-12b6d1fe796d")]
+                transform (msgAuthRequest) = AES.UniversalBank.Messaging.PaymentSchemas.RequestToAuthRequest (msgRequest);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b1b69d2c-c3c1-4ae3-bea4-3ea49bb9e603")]
+                msgAuthRequest(AES.UniversalBank.Messaging.PaymentSchemas.PaymentSetId) = msgRequest.Id;
+                msgAuthRequest(AES.UniversalBank.Messaging.PaymentSchemas.PaymentType) = msgRequest.PayeeType;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3be5729c-e47a-4e1a-9822-f956dff9c4c1")]
+            send (AuthRequestPort.Process, msgAuthRequest, initialize paymentType);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("22197604-291d-4ae1-99b8-14a9def3f65d")]
+            listen
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("ae3d1b12-fa3c-4090-a06b-154e5042d71d")]
+                until receive (AuthResponsePort.Process, msgAuthResponse, paymentType)
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("06fbd10d-c09c-4aa7-9889-94b7c2a8cd75")]
+                    construct msgResult
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8b1c6e3d-32a6-42a9-b71b-d0c6f3cde5bf")]
+                        transform (msgResult) = AES.UniversalBank.Messaging.PaymentSchemas.AuthResponseToResponse (msgAuthResponse);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("15ef10f3-3611-4fd0-bfac-600530ae6834")]
+                    send (SendResultPort.SendResult, msgResult);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1891d577-e8fe-44ae-b070-fc34fbceaf39")]
+                timeout System.TimeSpan.FromMinutes(10)
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("bfe8fe10-213f-480d-b164-60e66dd038f7")]
+                    construct msgResult
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8767f9e3-cb13-479c-897d-9b1bcd0f49d4")]
+                        transform (msgResult) = AES.UniversalBank.Messaging.PaymentSchemas.RequestToResponse (msgRequest);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("27af5edc-ef8d-4bf1-baa3-746d7f877715")]
+                        msgResult.Success = false;
+                        msgResult.Message = "Timeout for payment expired";
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("497b7867-ff2e-47d4-be38-7a7d88b15b23")]
+                    send (SendResultPort.SendResult, msgResult);
+                }
+            }
+        }
+    }
+}
+

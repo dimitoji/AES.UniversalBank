@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="47cfd5e1-f05e-4465-98c8-da96b1e073c4" LowerBound="1.1" HigherBound="37.1">
+    <om:Element Type="Module" OID="d204d60e-8028-4eee-addf-34d3299cfadb" LowerBound="1.1" HigherBound="65.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_" />
         <om:Property Name="Signal" Value="False" />
@@ -12,54 +12,106 @@
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService" />
             <om:Property Name="Signal" Value="False" />
-            <om:Element Type="MethodMessageOperation" OID="f3344152-bff8-4fc7-bbd1-143a0c680574" ParentLink="MethodMessageType_MethodMessageOperation">
+            <om:Element Type="MethodMessageOperation" OID="241c71c1-1a86-4ceb-9e92-330203ace122" ParentLink="MethodMessageType_MethodMessageOperation">
                 <om:Property Name="OperationName" Value="GetCustomerPayments" />
                 <om:Property Name="OperationDirection" Value="Request" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GetCustomerPayments_request" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="WebOperationPart" OID="8722f48d-5731-4882-8125-2a3e85d4d5cd" ParentLink="MethodMessageOperation_WebOperationPart">
+                <om:Element Type="WebOperationPart" OID="cf3cced4-ecd6-4651-a444-173ad59eeeb4" ParentLink="MethodMessageOperation_WebOperationPart">
                     <om:Property Name="ClassName" Value="System.String" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="customerId" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MethodMessageOperation" OID="d80340bc-6d7d-4a5f-b0b8-efe2ea9308d9" ParentLink="MethodMessageType_MethodMessageOperation">
+            <om:Element Type="MethodMessageOperation" OID="c10c0c85-ad51-4c3d-a511-cb6983501a3a" ParentLink="MethodMessageType_MethodMessageOperation">
                 <om:Property Name="OperationName" Value="GetCustomerPayments" />
                 <om:Property Name="OperationDirection" Value="Response" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="GetCustomerPayments_response" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="WebOperationPart" OID="dc1139fb-4409-4673-a0e4-29d67f9b4b1a" ParentLink="MethodMessageOperation_WebOperationPart">
+                <om:Element Type="WebOperationPart" OID="1645bcbd-7e61-4db5-a1a5-5d8d92fb7d23" ParentLink="MethodMessageOperation_WebOperationPart">
                     <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.ArrayOfPayment" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="GetCustomerPaymentsResult" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MethodMessageOperation" OID="512eb9c9-a180-4fa9-9a7a-482599456159" ParentLink="MethodMessageType_MethodMessageOperation">
+            <om:Element Type="MethodMessageOperation" OID="9eeb353e-e684-4fcb-a1bc-c1ee7e26956f" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetPayment" />
+                <om:Property Name="OperationDirection" Value="Request" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPayment_request" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="23306bdb-738d-42bb-8588-0a28bfdb51a5" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="id" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="9c6a730a-94ff-467e-8002-db215dd25127" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetPayment" />
+                <om:Property Name="OperationDirection" Value="Response" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPayment_response" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="ef434d60-f7a0-425f-bf6e-9aa7c35b3ae6" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.Payment" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetPaymentResult" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="79ca9553-54ff-4a75-9a49-9f6132d6467c" ParentLink="MethodMessageType_MethodMessageOperation">
                 <om:Property Name="OperationName" Value="SavePayment" />
                 <om:Property Name="OperationDirection" Value="Request" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="SavePayment_request" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="WebOperationPart" OID="19df7720-c894-4a4b-8b3e-b464e75e289a" ParentLink="MethodMessageOperation_WebOperationPart">
+                <om:Element Type="WebOperationPart" OID="91e5fa3c-e1df-494b-9d73-a61d17fb2d31" ParentLink="MethodMessageOperation_WebOperationPart">
                     <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.Payment" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="info" />
+                    <om:Property Name="Name" Value="payment" />
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MethodMessageOperation" OID="223b47c4-88dc-476d-bb97-854f11f80f8c" ParentLink="MethodMessageType_MethodMessageOperation">
+            <om:Element Type="MethodMessageOperation" OID="685ead60-2b6f-4b65-a387-7bff891f08e8" ParentLink="MethodMessageType_MethodMessageOperation">
                 <om:Property Name="OperationName" Value="SavePayment" />
                 <om:Property Name="OperationDirection" Value="Response" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="SavePayment_response" />
                 <om:Property Name="Signal" Value="False" />
             </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="17b7f5a2-e6c1-4cce-b983-2247a1d26eda" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetPaymentRecords" />
+                <om:Property Name="OperationDirection" Value="Request" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPaymentRecords_request" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="7e853891-e28f-409e-a558-449502010bef" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="id" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="9b56849b-b821-4a99-9148-876a5272f08e" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetPaymentRecords" />
+                <om:Property Name="OperationDirection" Value="Response" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPaymentRecords_response" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="c96db0f6-7718-40b1-a276-4b07a1dcf0e0" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.ArrayOfPaymentRecord" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetPaymentRecordsResult" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
         </om:Element>
-        <om:Element Type="TargetXMLNamespaceAttribute" OID="2ff4e0e4-982f-4682-bab1-4d4d85bc7112" ParentLink="Module_CLRAttribute" LowerBound="2.1" HigherBound="3.1">
+        <om:Element Type="TargetXMLNamespaceAttribute" OID="07e2882d-8e25-46da-917b-c7debc4145ce" ParentLink="Module_CLRAttribute" LowerBound="2.1" HigherBound="3.1">
             <om:Property Name="TargetXMLNamespace" Value="http://www.universalbank.com/aes/services" />
             <om:Property Name="Signal" Value="False" />
         </om:Element>
@@ -80,25 +132,53 @@ module AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_
     {
         body AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.ArrayOfPayment GetCustomerPaymentsResult;
     };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService), "GetPayment", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
+    public messagetype GetPayment_request
+    {
+        body System.String id;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService), "GetPayment", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
+    public messagetype GetPayment_response
+    {
+        body AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.Payment GetPaymentResult;
+    };
     [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService), "SavePayment", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
     public messagetype SavePayment_request
     {
-        body AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.Payment info;
+        body AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.Payment payment;
     };
     [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService), "SavePayment", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
     public messagetype SavePayment_response
     {
     };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService), "GetPaymentRecords", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
+    public messagetype GetPaymentRecords_request
+    {
+        body System.String id;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService), "GetPaymentRecords", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
+    public messagetype GetPaymentRecords_response
+    {
+        body AES.UniversalBank.Messaging.BrokerProcess.PaymentService.Reference.ArrayOfPaymentRecord GetPaymentRecordsResult;
+    };
     [Microsoft.XLANGs.BaseTypes.WSDLProxyName(typeof(AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService))]
     public porttype PaymentsService
     {
+        requestresponse SavePayment
+        {
+            AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.SavePayment_request, AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.SavePayment_response
+        };
+        requestresponse GetPayment
+        {
+            AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.GetPayment_request, AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.GetPayment_response
+        };
         requestresponse GetCustomerPayments
         {
             AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.GetCustomerPayments_request, AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.GetCustomerPayments_response
         };
-        requestresponse SavePayment
+        requestresponse GetPaymentRecords
         {
-            AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.SavePayment_request, AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.SavePayment_response
+            AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.GetPaymentRecords_request, AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService_.GetPaymentRecords_response
         };
     };
 }

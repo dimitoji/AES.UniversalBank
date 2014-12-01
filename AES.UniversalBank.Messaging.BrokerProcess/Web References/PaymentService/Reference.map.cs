@@ -62,21 +62,64 @@ namespace AES.UniversalBank.Messaging.BrokerProcess.PaymentService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.universalbank.com/aes/services/IPaymentsService/SavePayment", RequestNamespace="http://www.universalbank.com/aes/services", ResponseNamespace="http://www.universalbank.com/aes/services", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void SavePayment([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Payment info) {
-            this.Invoke("SavePayment", new object[] {
-                        info});
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.universalbank.com/aes/services/IPaymentsService/GetPayment", RequestNamespace="http://www.universalbank.com/aes/services", ResponseNamespace="http://www.universalbank.com/aes/services", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Payment GetPayment([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string id) {
+            object[] results = this.Invoke("GetPayment", new object[] {
+                        id});
+            return ((Payment)(results[0]));
         }
         
         /// <remarks/>
-        public System.IAsyncResult BeginSavePayment(Payment info, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGetPayment(string id, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetPayment", new object[] {
+                        id}, callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public Payment EndGetPayment(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((Payment)(results[0]));
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.universalbank.com/aes/services/IPaymentsService/SavePayment", RequestNamespace="http://www.universalbank.com/aes/services", ResponseNamespace="http://www.universalbank.com/aes/services", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SavePayment([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Payment payment) {
+            this.Invoke("SavePayment", new object[] {
+                        payment});
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginSavePayment(Payment payment, System.AsyncCallback callback, object asyncState) {
             return this.BeginInvoke("SavePayment", new object[] {
-                        info}, callback, asyncState);
+                        payment}, callback, asyncState);
         }
         
         /// <remarks/>
         public void EndSavePayment(System.IAsyncResult asyncResult) {
             this.EndInvoke(asyncResult);
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentRecords", RequestNamespace="http://www.universalbank.com/aes/services", ResponseNamespace="http://www.universalbank.com/aes/services", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities")]
+        public PaymentRecord[] GetPaymentRecords([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string id) {
+            object[] results = this.Invoke("GetPaymentRecords", new object[] {
+                        id});
+            return ((PaymentRecord[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginGetPaymentRecords(string id, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetPaymentRecords", new object[] {
+                        id}, callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public PaymentRecord[] EndGetPaymentRecords(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((PaymentRecord[])(results[0]));
         }
     }
     
@@ -89,6 +132,15 @@ namespace AES.UniversalBank.Messaging.BrokerProcess.PaymentService {
     public partial class Payment {
         
         /// <comentarios/>
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public int DayOfMonth;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public bool DayOfMonthSpecified;
+        
+        /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
         public string Description;
@@ -97,5 +149,56 @@ namespace AES.UniversalBank.Messaging.BrokerProcess.PaymentService {
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
         public string Id;
+        
+        /// <comentarios/>
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public bool Recurring;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public bool RecurringSpecified;
+        
+        /// <comentarios/>
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public System.DateTime StartDate;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public bool StartDateSpecified;
+    }
+    
+    /// <comentarios/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities")]
+    public partial class PaymentRecord {
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public string Id;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public string PaymentId;
+        
+        /// <comentarios/>
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public System.DateTime ProcessDate;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public bool ProcessDateSpecified;
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute()]
+        public string Status;
     }
 }

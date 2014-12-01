@@ -17,16 +17,44 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetPayment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPaymentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" minOccurs="0" name="GetPaymentResult" nillable="true" type="q2:Payment" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="SavePayment">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" minOccurs="0" name="info" nillable="true" type="q2:Payment" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" minOccurs="0" name="payment" nillable="true" type="q3:Payment" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="SavePaymentResponse">
         <xs:complexType>
           <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPaymentRecords">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPaymentRecordsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" minOccurs="0" name="GetPaymentRecordsResult" nillable="true" type="q4:ArrayOfPaymentRecord" />
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
     </xs:schema>
@@ -80,11 +108,29 @@
       <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
       <xs:complexType name="Payment">
         <xs:sequence>
+          <xs:element minOccurs="0" name="DayOfMonth" type="xs:int" />
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Recurring" type="xs:boolean" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
         </xs:sequence>
       </xs:complexType>
       <xs:element name="Payment" nillable="true" type="tns:Payment" />
+      <xs:complexType name="ArrayOfPaymentRecord">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentRecord" nillable="true" type="tns:PaymentRecord" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPaymentRecord" nillable="true" type="tns:ArrayOfPaymentRecord" />
+      <xs:complexType name="PaymentRecord">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcessDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PaymentRecord" nillable="true" type="tns:PaymentRecord" />
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="IPaymentsService_GetCustomerPayments_InputMessage">
@@ -93,20 +139,40 @@
   <wsdl:message name="IPaymentsService_GetCustomerPayments_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomerPaymentsResponse" />
   </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPayment" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentResponse" />
+  </wsdl:message>
   <wsdl:message name="IPaymentsService_SavePayment_InputMessage">
     <wsdl:part name="parameters" element="tns:SavePayment" />
   </wsdl:message>
   <wsdl:message name="IPaymentsService_SavePayment_OutputMessage">
     <wsdl:part name="parameters" element="tns:SavePaymentResponse" />
   </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPaymentRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentRecords" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPaymentRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentRecordsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IPaymentsService">
     <wsdl:operation name="GetCustomerPayments">
       <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetCustomerPayments" message="tns:IPaymentsService_GetCustomerPayments_InputMessage" />
       <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetCustomerPaymentsResponse" message="tns:IPaymentsService_GetCustomerPayments_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetPayment">
+      <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPayment" message="tns:IPaymentsService_GetPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentResponse" message="tns:IPaymentsService_GetPayment_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SavePayment">
       <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/SavePayment" message="tns:IPaymentsService_SavePayment_InputMessage" />
       <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/SavePaymentResponse" message="tns:IPaymentsService_SavePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentRecords">
+      <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentRecords" message="tns:IPaymentsService_GetPaymentRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentRecordsResponse" message="tns:IPaymentsService_GetPaymentRecords_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPaymentsService" type="tns:IPaymentsService">
@@ -120,8 +186,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetPayment">
+      <soap:operation soapAction="http://www.universalbank.com/aes/services/IPaymentsService/GetPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SavePayment">
       <soap:operation soapAction="http://www.universalbank.com/aes/services/IPaymentsService/SavePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentRecords">
+      <soap:operation soapAction="http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentRecords" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

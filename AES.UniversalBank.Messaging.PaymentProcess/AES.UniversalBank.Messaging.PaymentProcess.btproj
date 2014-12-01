@@ -4,12 +4,12 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A0DA25D5-2D0C-4906-984A-0DD7663F68D6}</ProjectGuid>
+    <ProjectGuid>{1B11D466-269F-45C0-AFA3-A446632B1E17}</ProjectGuid>
     <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>library</OutputType>
     <GenericProcessing>true</GenericProcessing>
-    <RootNamespace>AES.UniversalBank.Messaging.BrokerSchemas</RootNamespace>
-    <AssemblyName>AES.UniversalBank.Messaging.BrokerSchemas</AssemblyName>
+    <RootNamespace>AES.UniversalBank.Messaging.PaymentProcess</RootNamespace>
+    <AssemblyName>AES.UniversalBank.Messaging.PaymentProcess</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <BpelCompliance>True</BpelCompliance>
   </PropertyGroup>
@@ -31,12 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>AES.UniversalBank.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -68,49 +62,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="_Request.xsd">
-      <TypeName>AccountInfoRequest</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
+    <XLang Include="ProcessPayment.odx">
+      <TypeName>SendPayment</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.PaymentProcess</Namespace>
       <SubType>Task</SubType>
-    </Schema>
+    </XLang>
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="Account.xsd">
-      <TypeName>Account</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="Customer.xsd">
-      <TypeName>Customer</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="Loan.xsd">
-      <TypeName>Loan</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="Payment.xsd">
-      <SubType>Task</SubType>
-      <TypeName>Payment</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="_PropertySchema.xsd">
-      <TypeName>PropertySchema</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas.Properties</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="AES.UniversalBank.snk" />
+    <ProjectReference Include="..\AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj">
+      <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
+      <Name>AES.UniversalBank.Common.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Messaging.PaymentSchemas\AES.UniversalBank.Messaging.PaymentSchemas.btproj">
+      <Project>{3645aeee-54c2-4ba4-b1a5-501ffd01ee48}</Project>
+      <Name>AES.UniversalBank.Messaging.PaymentSchemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Messaging.PaymentTranslator\AES.UniversalBank.Messaging.PaymentTranslator.btproj">
+      <Project>{534f0073-6c37-4108-8647-eb3066cacfc9}</Project>
+      <Name>AES.UniversalBank.Messaging.PaymentTranslator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
