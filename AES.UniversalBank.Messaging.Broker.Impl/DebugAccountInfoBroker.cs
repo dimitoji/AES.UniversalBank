@@ -10,7 +10,7 @@ namespace AES.UniversalBank.Messaging.Broker.Impl
     /// <summary>
     /// Esta clase permite simular el comportamiento del BizTalk Broker, solo para efectos de depuracion y pruebas unitarias
     /// </summary>
-    public class _DebugAccountInfoBroker : IAccountInfoBroker
+    public class DebugAccountInfoBroker : IAccountInfoBroker
     {
         public Common.Entities.Customer GetCustomerProfile(AccountInfoRequest request)
         {
@@ -24,23 +24,23 @@ namespace AES.UniversalBank.Messaging.Broker.Impl
 
         public IList<Common.Entities.Account> GetCustomerAccounts(AccountInfoRequest request)
         {
-                return new Account[]
+            return new Account[]
+            {
+                new Common.Entities.Account
                 {
-                    new Common.Entities.Account
-                    {
-                        Id = "123",
-                        Type = "Ahorros",
-                        BalanceValue = 5000000,
-                        BalanceDate = DateTime.Today,
-                    },
-                    new Common.Entities.Account
-                    {
-                        Id = "456",
-                        Type = "Corriente",
-                        BalanceValue = 2000000,
-                        BalanceDate = DateTime.Today,
-                    },
-                }.ToList();
+                    Id = "123",
+                    Type = "Ahorros",
+                    BalanceValue = 5000000,
+                    BalanceDate = DateTime.Today,
+                },
+                new Common.Entities.Account
+                {
+                    Id = "456",
+                    Type = "Corriente",
+                    BalanceValue = 2000000,
+                    BalanceDate = DateTime.Today,
+                },
+            }.ToList();
         }
 
         public IList<Common.Entities.Loan> GetCustomerLoans(AccountInfoRequest request)

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ArrayOfAccount" nillable="true" type="tns:ArrayOfAccount" />
+  <xs:complexType name="ArrayOfAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Account" nillable="true" type="tns:Account" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BalanceDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BalanceValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountTransaction" nillable="true" type="tns:ArrayOfAccountTransaction" />
+  <xs:complexType name="ArrayOfAccountTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountTransaction" nillable="true" type="tns:AccountTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountTransaction" />
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:element name="AccountTransaction" nillable="true" type="tns:AccountTransaction" />
+</xs:schema>

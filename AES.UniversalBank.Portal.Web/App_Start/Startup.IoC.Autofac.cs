@@ -19,7 +19,7 @@ namespace AES.UniversalBank.Portal.Web
             builder.RegisterType<Utils.MasterSlave.Impl.ParallelMasterSlave>()
                 .As<Utils.MasterSlave.IMasterSlaveStrategy>();
 
-            builder.RegisterType<Messaging.Broker.Impl._DebugAccountInfoBroker>()
+            builder.RegisterType<Messaging.Broker.Impl.DebugAccountInfoBroker>()
                 .As<Messaging.Broker.IAccountInfoBroker>();
 
             builder.RegisterType<BusinessLogic.Impl.AccountsManager>()

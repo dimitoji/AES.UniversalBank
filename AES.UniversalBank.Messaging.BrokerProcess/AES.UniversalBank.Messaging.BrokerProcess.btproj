@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4FB72F2F-0D0E-430D-A9BD-06D49796FB04}</ProjectGuid>
+    <ProjectGuid>{55A250F3-9295-4BAE-872C-E70635E446A4}</ProjectGuid>
     <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>library</OutputType>
     <GenericProcessing>true</GenericProcessing>
@@ -32,13 +32,17 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>AES.UniversalBank.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
@@ -64,6 +68,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\AccountService\Reference.map.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CustomerService\Reference.map.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LoanService\Reference.map.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PaymentService\Reference.map.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AES.UniversalBank.Messaging.BrokerSchemas\AES.UniversalBank.Messaging.BrokerSchemas.btproj">
@@ -71,7 +87,202 @@
       <Name>AES.UniversalBank.Messaging.BrokerSchemas</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:28958/AccountService.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AccountService\</RelPath>
+      <UpdateFromURL>http://localhost:28958/AccountService.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>http://localhost:28958/AccountService.svc</ServiceLocationURL>
+      <CachedDynamicPropName>AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService</CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:29156/LoanService.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LoanService\</RelPath>
+      <UpdateFromURL>http://localhost:29156/LoanService.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>http://localhost:29156/LoanService.svc</ServiceLocationURL>
+      <CachedDynamicPropName>AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService</CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:30111/CustomerService.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CustomerService\</RelPath>
+      <UpdateFromURL>http://localhost:30111/CustomerService.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>http://localhost:30111/CustomerService.svc</ServiceLocationURL>
+      <CachedDynamicPropName>AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService</CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:45323/PaymentsService.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PaymentService\</RelPath>
+      <UpdateFromURL>http://localhost:45323/PaymentsService.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>http://localhost:45323/PaymentsService.svc</ServiceLocationURL>
+      <CachedDynamicPropName>AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService</CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AES.UniversalBank.snk" />
+    <None Include="app.config" />
+    <None Include="Web References\AccountService\AccountService.wsdl" />
+    <None Include="Web References\AccountService\Reference.map">
+      <Generator>BtsDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.odx</LastGenOutput>
+    </None>
+    <None Include="Web References\LoanService\LoanService.wsdl" />
+    <None Include="Web References\LoanService\Reference.map">
+      <Generator>BtsDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.odx</LastGenOutput>
+    </None>
+    <None Include="Web References\PaymentService\PaymentsService.wsdl" />
+    <None Include="Web References\PaymentService\Reference.map">
+      <Generator>BtsDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.odx</LastGenOutput>
+    </None>
+    <Schema Include="Web References\PaymentService\Reference.xsd">
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.PaymentService</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Web References\LoanService\Reference.xsd">
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.LoanService</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Web References\AccountService\Reference.xsd">
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.AccountService</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <None Include="Web References\CustomerService\CustomerService.wsdl" />
+    <None Include="Web References\CustomerService\Reference.map">
+      <Generator>BtsDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.odx</LastGenOutput>
+    </None>
+    <Schema Include="Web References\CustomerService\Reference.xsd">
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.CustomerService</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Web References\CustomerService\Reference.odx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.CustomerService</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="GetCustomer.odx">
+      <TypeName>GetCustomer</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="GetAccounts.odx">
+      <SubType>Task</SubType>
+      <TypeName>GetCustomer_Copia</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Web References\AccountService\Reference.odx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.AccountService</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ResponseToAccounts.btm">
+      <TypeName>ResponseToAccounts</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ResponseToCustomer.btm">
+      <TypeName>ResponseToCustomer</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Web References\LoanService\Reference.odx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.LoanService</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="GetLoans.odx">
+      <SubType>Task</SubType>
+      <TypeName>GetCustomer_Copia</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ResponseToLoans.btm">
+      <TypeName>ResponseToLoans</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Web References\PaymentService\Reference.odx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <TypeName>Reference</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.PaymentService</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="GetPayments.odx">
+      <SubType>Task</SubType>
+      <TypeName>GetLoans_Copia</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ResponseToPayments.btm">
+      <TypeName>ResponseToPayments</TypeName>
+      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>

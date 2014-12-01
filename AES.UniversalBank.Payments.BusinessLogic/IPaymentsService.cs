@@ -7,9 +7,9 @@ namespace AES.UniversalBank.Payments.BusinessLogic
     public interface IPaymentsService
     {
         [OperationContract]
-        IList<Common.Entities.Payment> GetCutomerPaymentInfos(string customerId);
+        IList<Common.Entities.Payment> GetCustomerPayments(string customerId);
 
         [OperationContract]
-        void SavePaymentInfo(Common.Entities.Payment info);
+        void SavePayment(Common.Entities.Payment info);
     }
 }

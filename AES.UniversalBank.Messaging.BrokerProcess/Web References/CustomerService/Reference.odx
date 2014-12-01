@@ -1,0 +1,72 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="d19f15b0-0618-4126-9a8d-9614c76bccca" LowerBound="1.1" HigherBound="24.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService_" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="MethodMessageType" OID="00000000-0000-0000-0000-000000000000" ParentLink="Module_MessageType">
+            <om:Property Name="Url" Value="http://localhost:30111/CustomerService.svc" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MethodMessageOperation" OID="9a4d6d2d-7bee-42b9-b9d3-0b845545ef78" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="FindCustomerByEmail" />
+                <om:Property Name="OperationDirection" Value="Request" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FindCustomerByEmail_request" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="350c6e7e-e687-424d-9141-4aff344f2266" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="email" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="c475e00f-b84d-4b58-8457-8eb8d58deb0f" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="FindCustomerByEmail" />
+                <om:Property Name="OperationDirection" Value="Response" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FindCustomerByEmail_response" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="bb4feee1-7056-410b-9f8e-a7ce5fd37964" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.CustomerService.Reference" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="FindCustomerByEmailResult" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="TargetXMLNamespaceAttribute" OID="a219d19c-a016-46c3-b4d6-8f8316de41c6" ParentLink="Module_CLRAttribute" LowerBound="2.1" HigherBound="3.1">
+            <om:Property Name="TargetXMLNamespace" Value="http://www.universalbankcrm.com" />
+            <om:Property Name="Signal" Value="False" />
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(true)]
+[Microsoft.XLANGs.BaseTypes.TargetXmlNamespaceAttribute("http://www.universalbankcrm.com")]
+module AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService_
+{
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService), "FindCustomerByEmail", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
+    public messagetype FindCustomerByEmail_request
+    {
+        body System.String email;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService), "FindCustomerByEmail", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
+    public messagetype FindCustomerByEmail_response
+    {
+        body AES.UniversalBank.Messaging.BrokerProcess.CustomerService.Reference FindCustomerByEmailResult;
+    };
+    [Microsoft.XLANGs.BaseTypes.WSDLProxyName(typeof(AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService))]
+    public porttype CustomerService
+    {
+        requestresponse FindCustomerByEmail
+        {
+            AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService_.FindCustomerByEmail_request, AES.UniversalBank.Messaging.BrokerProcess.CustomerService.CustomerService_.FindCustomerByEmail_response
+        };
+    };
+}
+

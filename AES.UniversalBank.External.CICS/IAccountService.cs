@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
+using AES.UniversalBank.Common.Entities;
 
 namespace AES.UniversalBank.External.CICS
 {
@@ -7,7 +8,7 @@ namespace AES.UniversalBank.External.CICS
     public interface IAccountService
     {
         [OperationContract]
-        Common.Entities.Account GetAccount(string id);
+        IList<Common.Entities.Account> GetCustomerAccounts(string customerId);
 
         [OperationContract]
         IList<Common.Entities.AccountTransaction> GetAccountTransactions(string id);

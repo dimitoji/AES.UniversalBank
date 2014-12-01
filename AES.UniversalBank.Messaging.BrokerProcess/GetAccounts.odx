@@ -1,0 +1,251 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7386d0cc-27d6-47aa-9e4d-13e08328a740" LowerBound="1.1" HigherBound="54.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="f92fec72-22fd-4cd7-b04d-cb09efd30b93" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AccountsBrokerPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="aec00248-8bc7-493f-b753-a6d9ec28f72e" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetAccounts" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="c8e85a5d-edf4-407d-860a-0d0b5df5bc00" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.73">
+                    <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.BrokerSchemas.AccountInfoRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Solicitud" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="50ef3449-7b11-4082-b90e-936546fca34e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.75" HigherBound="8.124">
+                    <om:Property Name="Ref" Value="AES.UniversalBank.Messaging.BrokerSchemas.Account" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Respuesta" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="104d4a87-b4e4-422b-8304-b58440565125" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="53.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetAccounts" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="6a91013b-610c-4649-993d-e0e1a9f9fc03" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.BrokerSchemas.AccountInfoRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fdaac9f3-072d-45fe-85fa-fe6d16fc01f0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="19.1" HigherBound="20.1">
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.BrokerSchemas.Account" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgAccounts" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="4f958c63-c34f-4a9e-ac01-481a43cec161" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="1930aa3c-acdb-4b87-89f5-1a1f8aa4514f" ParentLink="ServiceBody_Statement" LowerBound="22.1" HigherBound="24.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="BrokerPort" />
+                    <om:Property Name="MessageName" Value="msgRequest" />
+                    <om:Property Name="OperationName" Value="GetAccounts" />
+                    <om:Property Name="OperationMessageName" Value="Solicitud" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="d6685c97-1999-4abd-86a5-d9f014205fb9" ParentLink="ServiceBody_Statement" LowerBound="24.1" HigherBound="49.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="External web service" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="ee3dcb39-c030-4907-b9a1-c698be836160" ParentLink="ComplexStatement_Statement" LowerBound="31.1" HigherBound="37.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="42977dd2-ec0f-49d5-8286-bf5c52d6829c" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                            <om:Property Name="Expression" Value="msgAccountsRequest.customerId = msgRequest.CustomerId;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="SetEmail" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="d143df8a-f7cc-426c-a70b-95e528b17c34" ParentLink="Construct_MessageRef" LowerBound="32.31" HigherBound="32.49">
+                            <om:Property Name="Ref" Value="msgAccountsRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="7173d661-b357-487f-8c01-2d90831fba27" ParentLink="ComplexStatement_Statement" LowerBound="37.1" HigherBound="39.1">
+                        <om:Property Name="PortName" Value="AccountPort" />
+                        <om:Property Name="MessageName" Value="msgAccountsRequest" />
+                        <om:Property Name="OperationName" Value="GetCustomerAccounts" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Request" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="3107bf17-b7c9-46f1-a005-d47abaac84b9" ParentLink="ComplexStatement_Statement" LowerBound="39.1" HigherBound="41.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="AccountPort" />
+                        <om:Property Name="MessageName" Value="msgAccountsResponse" />
+                        <om:Property Name="OperationName" Value="GetCustomerAccounts" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Response" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="bc0f0e3f-04e7-4d21-8ea4-2313ae1de1c9" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="47.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructResult" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="235a7fe2-fde1-40e4-ae53-1518ab96f3a6" ParentLink="Construct_MessageRef" LowerBound="42.31" HigherBound="42.42">
+                            <om:Property Name="Ref" Value="msgAccounts" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="dc0188db-25c8-40dd-9206-7fb521d24bd9" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="46.1">
+                            <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.Maps.ResponseToAccounts" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MapResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="40b69df2-bbc3-4399-9bd4-50a33b2a941f" ParentLink="Transform_InputMessagePartRef" LowerBound="45.118" HigherBound="45.163">
+                                <om:Property Name="MessageRef" Value="msgAccountsResponse" />
+                                <om:Property Name="PartRef" Value="GetCustomerAccountsResult" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="5cc99e1a-3da5-40b4-a079-45fb4179d2d6" ParentLink="Transform_OutputMessagePartRef" LowerBound="45.36" HigherBound="45.47">
+                                <om:Property Name="MessageRef" Value="msgAccounts" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="0c2680a7-af61-4c9c-999e-56d26f89ae74" ParentLink="Scope_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                        <om:Property Name="Type" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.GetCustomerAccounts_request" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="msgAccountsRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="7600bde5-455a-44dc-a41c-8e794d354f21" ParentLink="Scope_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                        <om:Property Name="Type" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.GetCustomerAccounts_response" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="msgAccountsResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="237a3af6-1a14-4885-bf00-befc351b7875" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="51.1">
+                    <om:Property Name="PortName" Value="BrokerPort" />
+                    <om:Property Name="MessageName" Value="msgAccounts" />
+                    <om:Property Name="OperationName" Value="GetAccounts" />
+                    <om:Property Name="OperationMessageName" Value="Respuesta" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5a70cd29-358d-4548-90b0-6594780192bb" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountsBrokerPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BrokerPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="8abab004-9213-47c0-ad76-3034ca23c489" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="852780e4-c586-4851-a21f-e80e04c9ea4c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="16.1" HigherBound="18.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="5" />
+                <om:Property Name="IsWebPort" Value="True" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.AccountService" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AccountPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="16cdb57d-ab00-4938-bbfe-822e9d9bbdb0" ParentLink="PortDeclaration_CLRAttribute" LowerBound="16.1" HigherBound="17.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module AES.UniversalBank.Messaging.BrokerProcess
+{
+    internal porttype AccountsBrokerPortType
+    {
+        requestresponse GetAccounts
+        {
+            AES.UniversalBank.Messaging.BrokerSchemas.AccountInfoRequest, AES.UniversalBank.Messaging.BrokerSchemas.Account
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service GetAccounts
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements AccountsBrokerPortType BrokerPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses AccountService.AccountService_.AccountService AccountPort;
+        message AES.UniversalBank.Messaging.BrokerSchemas.AccountInfoRequest msgRequest;
+        message AES.UniversalBank.Messaging.BrokerSchemas.Account msgAccounts;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1930aa3c-acdb-4b87-89f5-1a1f8aa4514f")]
+            activate receive (BrokerPort.GetAccounts, msgRequest);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d6685c97-1999-4abd-86a5-d9f014205fb9")]
+            scope
+            {
+                message AccountService.AccountService_.GetCustomerAccounts_request msgAccountsRequest;
+                message AccountService.AccountService_.GetCustomerAccounts_response msgAccountsResponse;
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ee3dcb39-c030-4907-b9a1-c698be836160")]
+                    construct msgAccountsRequest
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("42977dd2-ec0f-49d5-8286-bf5c52d6829c")]
+                        msgAccountsRequest.customerId = msgRequest.CustomerId;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7173d661-b357-487f-8c01-2d90831fba27")]
+                    send (AccountPort.GetCustomerAccounts, msgAccountsRequest);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("3107bf17-b7c9-46f1-a005-d47abaac84b9")]
+                    receive (AccountPort.GetCustomerAccounts, msgAccountsResponse);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("bc0f0e3f-04e7-4d21-8ea4-2313ae1de1c9")]
+                    construct msgAccounts
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("dc0188db-25c8-40dd-9206-7fb521d24bd9")]
+                        transform (msgAccounts) = AES.UniversalBank.Messaging.BrokerProcess.Maps.ResponseToAccounts (msgAccountsResponse.GetCustomerAccountsResult);
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("237a3af6-1a14-4885-bf00-befc351b7875")]
+            send (BrokerPort.GetAccounts, msgAccounts);
+        }
+    }
+}
+

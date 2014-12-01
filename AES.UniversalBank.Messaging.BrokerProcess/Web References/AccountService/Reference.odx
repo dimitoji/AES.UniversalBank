@@ -1,0 +1,152 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="0d3aad14-15f8-4cf6-ac38-2d1a84cb18fc" LowerBound="1.1" HigherBound="52.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="MethodMessageType" OID="00000000-0000-0000-0000-000000000000" ParentLink="Module_MessageType">
+            <om:Property Name="Url" Value="http://localhost:28958/AccountService.svc" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MethodMessageOperation" OID="9bb78f16-379e-4247-85d9-a11919c6aeac" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetCustomerAccounts" />
+                <om:Property Name="OperationDirection" Value="Request" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetCustomerAccounts_request" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="77294fda-36b6-4cad-8dea-faf7e0f53b24" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="customerId" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="24a00141-f54f-4a48-984f-6604492d5f39" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetCustomerAccounts" />
+                <om:Property Name="OperationDirection" Value="Response" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetCustomerAccounts_response" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="31dde4f4-5f99-41c4-8f2a-851eee17b69b" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.Reference.ArrayOfAccount" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetCustomerAccountsResult" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="d66413fb-57ae-4033-80c5-a5662da1229a" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetAccountTransactions" />
+                <om:Property Name="OperationDirection" Value="Request" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetAccountTransactions_request" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="f774ad93-b0ef-4f43-99b3-566617296c0e" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="id" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="c3082dba-a5cc-4b75-adbc-cc2215b8eb32" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetAccountTransactions" />
+                <om:Property Name="OperationDirection" Value="Response" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetAccountTransactions_response" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="d8ba1d4d-ed0b-4f03-aa60-891c3ae748f5" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.Reference.ArrayOfAccountTransaction" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetAccountTransactionsResult" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="371f706d-8f88-427c-bc7b-76d9e559bcb6" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="AddAccountTransaction" />
+                <om:Property Name="OperationDirection" Value="Request" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AddAccountTransaction_request" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="136ab302-c8b9-4bb3-a54e-3704247f0358" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="accountId" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="WebOperationPart" OID="10d85d14-0f9d-411c-83dd-3a11564c6971" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.AccountService.Reference.AccountTransaction" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="@transaction" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="c19a5f16-4f33-4bba-84b2-8cc8c59ca233" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="AddAccountTransaction" />
+                <om:Property Name="OperationDirection" Value="Response" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AddAccountTransaction_response" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="TargetXMLNamespaceAttribute" OID="feaf32d2-7543-47ac-8016-33b54c8dd015" ParentLink="Module_CLRAttribute" LowerBound="2.1" HigherBound="3.1">
+            <om:Property Name="TargetXMLNamespace" Value="http://www.universalbank.com/aes/services" />
+            <om:Property Name="Signal" Value="False" />
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(true)]
+[Microsoft.XLANGs.BaseTypes.TargetXmlNamespaceAttribute("http://www.universalbank.com/aes/services")]
+module AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_
+{
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService), "GetCustomerAccounts", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
+    public messagetype GetCustomerAccounts_request
+    {
+        body System.String customerId;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService), "GetCustomerAccounts", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
+    public messagetype GetCustomerAccounts_response
+    {
+        body AES.UniversalBank.Messaging.BrokerProcess.AccountService.Reference.ArrayOfAccount GetCustomerAccountsResult;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService), "GetAccountTransactions", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
+    public messagetype GetAccountTransactions_request
+    {
+        body System.String id;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService), "GetAccountTransactions", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
+    public messagetype GetAccountTransactions_response
+    {
+        body AES.UniversalBank.Messaging.BrokerProcess.AccountService.Reference.ArrayOfAccountTransaction GetAccountTransactionsResult;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService), "AddAccountTransaction", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
+    public messagetype AddAccountTransaction_request
+    {
+        body System.String accountId;
+        AES.UniversalBank.Messaging.BrokerProcess.AccountService.Reference.AccountTransaction @transaction;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService), "AddAccountTransaction", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
+    public messagetype AddAccountTransaction_response
+    {
+    };
+    [Microsoft.XLANGs.BaseTypes.WSDLProxyName(typeof(AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService))]
+    public porttype AccountService
+    {
+        requestresponse AddAccountTransaction
+        {
+            AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.AddAccountTransaction_request, AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.AddAccountTransaction_response
+        };
+        requestresponse GetAccountTransactions
+        {
+            AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.GetAccountTransactions_request, AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.GetAccountTransactions_response
+        };
+        requestresponse GetCustomerAccounts
+        {
+            AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.GetCustomerAccounts_request, AES.UniversalBank.Messaging.BrokerProcess.AccountService.AccountService_.GetCustomerAccounts_response
+        };
+    };
+}
+

@@ -11,12 +11,12 @@ namespace AES.UniversalBank.Payments.BusinessLogic.Impl
     [ServiceBehavior(Namespace = "http://www.universalbank.com/aes/services")]
     public class PaymentsService : IPaymentsService
     {
-        public IList<Payment> GetCutomerPaymentInfos(string customerId)
+        public IList<Payment> GetCustomerPayments(string customerId)
         {
             return new Payment[0].ToList();
         }
 
-        public void SavePaymentInfo(Payment info)
+        public void SavePayment(Payment info)
         {
             //TODO: Implement
         }

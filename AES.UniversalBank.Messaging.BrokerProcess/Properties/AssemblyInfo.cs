@@ -23,7 +23,7 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e5fddbad-6121-46b0-b62d-91b76eddd74d")]
+[assembly: Guid("26c5e8f9-5857-4aec-a43b-b0c292f7bd7d")]
 
 // Version information for an assembly consists of the following four values:
 //

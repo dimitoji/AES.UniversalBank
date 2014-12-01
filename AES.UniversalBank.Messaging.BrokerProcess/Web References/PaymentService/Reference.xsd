@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
+  <xs:complexType name="ArrayOfPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:Payment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Payment">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Payment" nillable="true" type="tns:Payment" />
+</xs:schema>

@@ -1,0 +1,72 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="764ac7fc-963a-49dd-9dfc-76538a97a70a" LowerBound="1.1" HigherBound="24.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService_" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="MethodMessageType" OID="00000000-0000-0000-0000-000000000000" ParentLink="Module_MessageType">
+            <om:Property Name="Url" Value="http://localhost:29156/LoanService.svc" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MethodMessageOperation" OID="355f953c-cafc-4505-90c9-51f1b5aa9682" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetCustomerLoans" />
+                <om:Property Name="OperationDirection" Value="Request" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetCustomerLoans_request" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="4b2ac97f-62d0-4478-91bf-11244d076510" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="customerId" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MethodMessageOperation" OID="4846d307-2c66-41c1-b1e0-5e5cc62e22f6" ParentLink="MethodMessageType_MethodMessageOperation">
+                <om:Property Name="OperationName" Value="GetCustomerLoans" />
+                <om:Property Name="OperationDirection" Value="Response" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetCustomerLoans_response" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="WebOperationPart" OID="f1195d67-cf18-427d-a4b2-41713bcfe577" ParentLink="MethodMessageOperation_WebOperationPart">
+                    <om:Property Name="ClassName" Value="AES.UniversalBank.Messaging.BrokerProcess.LoanService.Reference.ArrayOfLoan" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetCustomerLoansResult" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="TargetXMLNamespaceAttribute" OID="a3076bd2-9a4d-4460-8d48-68a2e29c50ac" ParentLink="Module_CLRAttribute" LowerBound="2.1" HigherBound="3.1">
+            <om:Property Name="TargetXMLNamespace" Value="http://tempuri.org/" />
+            <om:Property Name="Signal" Value="False" />
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(true)]
+[Microsoft.XLANGs.BaseTypes.TargetXmlNamespaceAttribute("http://tempuri.org/")]
+module AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService_
+{
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService), "GetCustomerLoans", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eRequest)]
+    public messagetype GetCustomerLoans_request
+    {
+        body System.String customerId;
+    };
+    [Microsoft.XLANGs.BaseTypes.WebPortBinding(typeof(AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService), "GetCustomerLoans", Microsoft.XLANGs.BaseTypes.EXLangSMessageInfo.eResponse)]
+    public messagetype GetCustomerLoans_response
+    {
+        body AES.UniversalBank.Messaging.BrokerProcess.LoanService.Reference.ArrayOfLoan GetCustomerLoansResult;
+    };
+    [Microsoft.XLANGs.BaseTypes.WSDLProxyName(typeof(AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService))]
+    public porttype LoanService
+    {
+        requestresponse GetCustomerLoans
+        {
+            AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService_.GetCustomerLoans_request, AES.UniversalBank.Messaging.BrokerProcess.LoanService.LoanService_.GetCustomerLoans_response
+        };
+    };
+}
+
