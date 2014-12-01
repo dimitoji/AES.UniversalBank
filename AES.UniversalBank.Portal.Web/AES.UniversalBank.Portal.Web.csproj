@@ -259,10 +259,6 @@
       <Project>{bc2c8ca4-ec68-4c65-974e-edda3ad6748e}</Project>
       <Name>AES.UniversalBank.Messaging.Broker</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.Payments.Service\AES.UniversalBank.Payments.Service.csproj">
-      <Project>{face98af-b4d0-40bb-999e-df3ca4e545c1}</Project>
-      <Name>AES.UniversalBank.Payments.Service</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AES.UniversalBank.Portal.Authentication.Impl\AES.UniversalBank.Portal.Authentication.Impl.csproj">
       <Project>{a0bc934e-b635-4112-a273-660672f4dba0}</Project>
       <Name>AES.UniversalBank.Portal.Authentication.Impl</Name>

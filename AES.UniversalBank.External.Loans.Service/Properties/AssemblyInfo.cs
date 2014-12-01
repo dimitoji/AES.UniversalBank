@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada a un ensamblado.
-[assembly: AssemblyTitle("AES.UniversalBank.Payments.Service")]
+[assembly: AssemblyTitle("AES.UniversalBank.External.Loans.Service")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AES.UniversalBank.Payments.Service")]
+[assembly: AssemblyProduct("AES.UniversalBank.External.Loans.Service")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como identificador de la biblioteca de tipos si este proyecto se expone a COM
-[assembly: Guid("f4c3e4e3-8781-4f32-9adb-8fc9b0b2409a")]
+[assembly: Guid("a7dc5581-0c3b-4f43-ade5-f2604805111d")]
 
 // La información de versión de un ensamblado consta de los siguientes cuatro valores:
 //

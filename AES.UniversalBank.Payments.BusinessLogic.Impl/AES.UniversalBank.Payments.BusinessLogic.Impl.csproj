@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875}</ProjectGuid>
+    <ProjectGuid>{B0BB4769-7F2B-461F-88E9-4FC1FDB6229A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AES.UniversalBank.External.CICS</RootNamespace>
-    <AssemblyName>AES.UniversalBank.External.CICS</AssemblyName>
+    <RootNamespace>AES.UniversalBank.Payments.BusinessLogic.Impl</RootNamespace>
+    <AssemblyName>AES.UniversalBank.Payments.BusinessLogic.Impl</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,13 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAccountService.cs" />
+    <Compile Include="PaymentsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj">
       <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
       <Name>AES.UniversalBank.Common.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Common.Trace\AES.UniversalBank.Common.Trace.csproj">
+      <Project>{752e8bef-bc56-4755-9f61-d5989f73a126}</Project>
+      <Name>AES.UniversalBank.Common.Trace</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Payments.BusinessLogic\AES.UniversalBank.Payments.BusinessLogic.csproj">
+      <Project>{2eb4ecdd-1c34-4b97-ba91-a63db656536b}</Project>
+      <Name>AES.UniversalBank.Payments.BusinessLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D9B816BB-8F66-4DDD-9D8E-DDC3159941E6}</ProjectGuid>
+    <ProjectGuid>{0D7F40AF-38A6-471D-B382-9625D5465C01}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AES.UniversalBank.Payments.Service</RootNamespace>
-    <AssemblyName>AES.UniversalBank.Payments.Service</AssemblyName>
+    <RootNamespace>AES.UniversalBankCRM.Service</RootNamespace>
+    <AssemblyName>AES.UniversalBankCRM.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
@@ -59,10 +59,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PaymentsService.svc" />
+    <Content Include="CustomerService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerService.svc.cs">
+      <DependentUpon>CustomerService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,25 +80,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj">
-      <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
-      <Name>AES.UniversalBank.Common.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.Common.Trace\AES.UniversalBank.Common.Trace.csproj">
-      <Project>{752e8bef-bc56-4755-9f61-d5989f73a126}</Project>
-      <Name>AES.UniversalBank.Common.Trace</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.Payments.BusinessLogic.Impl\AES.UniversalBank.Payments.BusinessLogic.Impl.csproj">
-      <Project>{b0bb4769-7f2b-461f-88e9-4fc1fdb6229a}</Project>
-      <Name>AES.UniversalBank.Payments.BusinessLogic.Impl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.Payments.BusinessLogic\AES.UniversalBank.Payments.BusinessLogic.csproj">
-      <Project>{2eb4ecdd-1c34-4b97-ba91-a63db656536b}</Project>
-      <Name>AES.UniversalBank.Payments.BusinessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AES.UniversalBank.Payments.Data\AES.UniversalBank.Payments.Data.csproj">
-      <Project>{2bc8a6a0-24b7-4c25-b672-0caf1872cde4}</Project>
-      <Name>AES.UniversalBank.Payments.Data</Name>
+    <ProjectReference Include="..\AES.UniversalBankCRM\AES.UniversalBankCRM.csproj">
+      <Project>{cfcd65f5-00ab-455b-b4d5-61bf812303c2}</Project>
+      <Name>AES.UniversalBankCRM</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -111,9 +98,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>45323</DevelopmentServerPort>
+          <DevelopmentServerPort>30111</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:45323/</IISUrl>
+          <IISUrl>http://localhost:30111/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

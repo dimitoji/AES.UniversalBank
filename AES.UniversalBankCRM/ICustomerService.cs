@@ -5,12 +5,12 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AES.UniversalBank.External.Loans
+namespace AES.UniversalBankCRM
 {
-    [ServiceContract]
-    public interface ILoanService
+    [ServiceContract(Namespace = "http://www.universalbankcrm.com")]
+    public interface ICustomerService
     {
         [OperationContract]
-        IList<Common.Entities.Loan> GetCustomerLoans(string customerId);
+        Customer FindCustomerByEmail(string email);
     }
 }

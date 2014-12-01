@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5029AA3-5D1C-4E51-A9D9-9FB9749EE875}</ProjectGuid>
+    <ProjectGuid>{CFCD65F5-00AB-455B-B4D5-61BF812303C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AES.UniversalBank.External.CICS</RootNamespace>
-    <AssemblyName>AES.UniversalBank.External.CICS</AssemblyName>
+    <RootNamespace>AES.UniversalBankCRM</RootNamespace>
+    <AssemblyName>AES.UniversalBankCRM</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,14 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAccountService.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="ICustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AES.UniversalBank.Common.Entities\AES.UniversalBank.Common.Entities.csproj">
-      <Project>{465fafa4-b92c-415e-8882-e585ac7216d1}</Project>
-      <Name>AES.UniversalBank.Common.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
