@@ -63,6 +63,13 @@
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Receive" />
                     <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="4e5da7c4-d79e-4c66-b02a-7a38e2104893" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="AES.UniversalBank.Messaging.BrokerSchemas.Properties.RequestType" />
+                        <om:Property Name="RHS" Value="&quot;Customer&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
                 </om:Element>
                 <om:Element Type="Scope" OID="d6685c97-1999-4abd-86a5-d9f014205fb9" ParentLink="ServiceBody_Statement" LowerBound="24.1" HigherBound="49.1">
                     <om:Property Name="InitializedTransactionType" Value="True" />
@@ -217,7 +224,7 @@ module AES.UniversalBank.Messaging.BrokerProcess
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("1930aa3c-acdb-4b87-89f5-1a1f8aa4514f")]
-            activate receive (BrokerPort.GetCustomer, msgRequest);
+            activate ((AES.UniversalBank.Messaging.BrokerSchemas.Properties.RequestType == "Customer"))receive (BrokerPort.GetCustomer, msgRequest);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("d6685c97-1999-4abd-86a5-d9f014205fb9")]
             scope
             {
