@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAccountInfoManager.cs" />
     <Compile Include="IAccountsManager.cs" />
     <Compile Include="IPaymentsManager.cs" />
     <Compile Include="Models\AccountInfo.cs" />

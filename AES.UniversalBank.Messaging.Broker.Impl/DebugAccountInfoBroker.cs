@@ -60,9 +60,32 @@ namespace AES.UniversalBank.Messaging.Broker.Impl
             }.ToList();
         }
 
-        public IList<Common.Entities.Payment> GetCustomerPayments(AccountInfoRequest request)
+        public IList<AccountTransaction> GetAccountTransactions(AccountInfoRequest request)
         {
-            return new Payment[0].ToList();
+            return new AccountTransaction[]
+            {
+                new Common.Entities.AccountTransaction
+                {
+                    Id = "0001",
+                    Date = new DateTime(2013, 03, 05),
+                    Amount = 123000,
+                    Description = "Pago Automatico"
+                },
+                new Common.Entities.AccountTransaction
+                {
+                    Id = "0005",
+                    Date = new DateTime(2013, 04, 13),
+                    Amount = 50000,
+                    Description = "Retiro"
+                },
+                new Common.Entities.AccountTransaction
+                {
+                    Id = "0005",
+                    Date = new DateTime(2013, 05, 05),
+                    Amount = 123000,
+                    Description = "Pago Automatico"
+                },
+            }.ToList();
         }
     }
 }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.universalbank.com/aes/services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PaymentsService" targetNamespace="http://www.universalbank.com/aes/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://localhost:45323/PaymentsService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.universalbank.com/aes/services/Imports">
+      <xsd:import schemaLocation="http://localhost:45323/PaymentsService.svc?xsd=xsd0" namespace="http://www.universalbank.com/aes/services" />
+      <xsd:import schemaLocation="http://localhost:45323/PaymentsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:45323/PaymentsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AES.UniversalBank.Common.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPaymentsService_GetCustomerPayments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerPayments" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetCustomerPayments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerPaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPayment" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_SavePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePayment" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_SavePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPaymentRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentRecords" />
+  </wsdl:message>
+  <wsdl:message name="IPaymentsService_GetPaymentRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentRecordsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPaymentsService">
+    <wsdl:operation name="GetCustomerPayments">
+      <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetCustomerPayments" message="tns:IPaymentsService_GetCustomerPayments_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetCustomerPaymentsResponse" message="tns:IPaymentsService_GetCustomerPayments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayment">
+      <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPayment" message="tns:IPaymentsService_GetPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentResponse" message="tns:IPaymentsService_GetPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePayment">
+      <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/SavePayment" message="tns:IPaymentsService_SavePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/SavePaymentResponse" message="tns:IPaymentsService_SavePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentRecords">
+      <wsdl:input wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentRecords" message="tns:IPaymentsService_GetPaymentRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.universalbank.com/aes/services/IPaymentsService/GetPaymentRecordsResponse" message="tns:IPaymentsService_GetPaymentRecords_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="PaymentsService">
+    <wsdl:port name="BasicHttpBinding_IPaymentsService" binding="i0:BasicHttpBinding_IPaymentsService">
+      <soap:address location="http://localhost:45323/PaymentsService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

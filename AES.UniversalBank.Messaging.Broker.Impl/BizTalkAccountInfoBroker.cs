@@ -99,32 +99,9 @@ namespace AES.UniversalBank.Messaging.Broker.Impl
             }
         }
 
-        public IList<Common.Entities.Payment> GetCustomerPayments(AccountInfoRequest request)
+        public IList<AccountTransaction> GetAccountTransactions(AccountInfoRequest request)
         {
-            try
-            {
-                var client = new BizTalkServiceReference.AccountInfoBrokerClient();
-
-                // Invokes the biztalk service
-                var accounts = client.GetCustomerPayments(
-                    new BizTalkServiceReference.AccountInfoRequest
-                    {
-                        CustomerId = request.CustomerId,
-                        Type = request.Type.ToString(),
-                    });
-
-                return accounts.Select(
-                    p => new Common.Entities.Payment
-                    {
-                        Id = p.Id,
-                        Description = p.Description,
-                    }
-                ).ToList();
-            }
-            catch (Exception ex)
-            {
-                return new Payment[0].ToList();
-            }
+            throw new NotImplementedException();
         }
     }
 }

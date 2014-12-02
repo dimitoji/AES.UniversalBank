@@ -20,7 +20,17 @@ namespace AES.UniversalBank.Portal.Web
                 .As<Utils.MasterSlave.IMasterSlaveStrategy>();
 
             builder.RegisterType<Messaging.Broker.Impl.DebugAccountInfoBroker>()
+            //builder.RegisterType<Messaging.Broker.Impl.BizTalkAccountInfoBroker>()
                 .As<Messaging.Broker.IAccountInfoBroker>();
+
+            builder.RegisterType<BusinessLogic.Impl.ServiceClients.PaymentsServiceImpl>()
+                .As<Payments.BusinessLogic.IPaymentsService>();
+
+            builder.RegisterType<BusinessLogic.Impl.AccountInfoManager>()
+                .As<BusinessLogic.IAccountInfoManager>();
+
+            builder.RegisterType<BusinessLogic.Impl.PaymentsManager>()
+                .As<BusinessLogic.IPaymentsManager>();
 
             builder.RegisterType<BusinessLogic.Impl.AccountsManager>()
                 .As<BusinessLogic.IAccountsManager>();

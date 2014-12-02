@@ -5,29 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using AES.UniversalBank.Common.Entities;
 using AES.UniversalBank.Common.Trace;
-using AES.UniversalBank.Messaging.Broker;
 
 namespace AES.UniversalBank.Portal.BusinessLogic.Impl.SlaveTasks
 {
     internal class CustomerPaymentsTask : Utils.MasterSlave.ISlaveTask<string, object>
     {
-        private readonly Messaging.Broker.IAccountInfoBroker _accountInfoBroker;
+        private readonly Payments.BusinessLogic.IPaymentsService _paymentService;
 
-        public CustomerPaymentsTask(Messaging.Broker.IAccountInfoBroker accountInfoBroker)
+        public CustomerPaymentsTask(Payments.BusinessLogic.IPaymentsService paymentService)
         {
-            this._accountInfoBroker = accountInfoBroker;
+            this._paymentService = paymentService;
         }
 
         public object Run(string parameter)
         {
-            var request = new AccountInfoRequest
-            {
-                CustomerId = parameter,
-                Type = AccountInfoRequest.RequestType.Payment,
-            };
-
-            Trace.Write("Obteniendo Pagos via Broker...");
-            return this._accountInfoBroker.GetCustomerPayments(request);
+            Trace.Write("Obteniendo Pagos via Servicio...");
+            return this._paymentService.GetCustomerPayments(parameter);
         }
     }
 }

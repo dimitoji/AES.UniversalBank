@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountsManager.cs" />
+    <Compile Include="PaymentsManager.cs" />
+    <Compile Include="AccountInfoManager.cs" />
+    <Compile Include="ServiceClients\PaymentsServiceImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PaymentsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="SlaveTasks\CustomerPaymentsTask.cs" />
     <Compile Include="SlaveTasks\CustomerLoansTask.cs" />
     <Compile Include="SlaveTasks\CustomerAccountsTask.cs" />
@@ -67,6 +77,10 @@
       <Project>{bc2c8ca4-ec68-4c65-974e-edda3ad6748e}</Project>
       <Name>AES.UniversalBank.Messaging.Broker</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AES.UniversalBank.Payments.BusinessLogic\AES.UniversalBank.Payments.BusinessLogic.csproj">
+      <Project>{2eb4ecdd-1c34-4b97-ba91-a63db656536b}</Project>
+      <Name>AES.UniversalBank.Payments.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AES.UniversalBank.Portal.BusinessLogic\AES.UniversalBank.Portal.BusinessLogic.csproj">
       <Project>{d0fd9771-23a3-4656-838c-24acdf31c271}</Project>
       <Name>AES.UniversalBank.Portal.BusinessLogic</Name>
@@ -75,6 +89,37 @@
       <Project>{909ee4f1-a85c-4094-a622-94c4e56e227b}</Project>
       <Name>AES.Utils.MasterSlave</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\AES.UniversalBank.Common.Entities.Payment.datasource" />
+    <None Include="Properties\DataSources\AES.UniversalBank.Common.Entities.PaymentRecord.datasource" />
+    <None Include="Service References\PaymentsService\PaymentsService.wsdl" />
+    <None Include="Service References\PaymentsService\PaymentsService.xsd" />
+    <None Include="Service References\PaymentsService\PaymentsService1.wsdl" />
+    <None Include="Service References\PaymentsService\PaymentsService1.xsd" />
+    <None Include="Service References\PaymentsService\PaymentsService2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PaymentsService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentsService\PaymentsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

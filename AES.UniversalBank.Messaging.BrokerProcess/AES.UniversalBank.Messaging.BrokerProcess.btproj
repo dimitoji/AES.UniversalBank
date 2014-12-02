@@ -77,9 +77,6 @@
     <Compile Include="Web References\LoanService\Reference.map.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\PaymentService\Reference.map.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AES.UniversalBank.Messaging.BrokerSchemas\AES.UniversalBank.Messaging.BrokerSchemas.btproj">
@@ -127,17 +124,6 @@
       <CachedSettingsPropName>
       </CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:45323/PaymentsService.svc%3fsingleWsdl">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\PaymentService\</RelPath>
-      <UpdateFromURL>http://localhost:45323/PaymentsService.svc%3fsingleWsdl</UpdateFromURL>
-      <ServiceLocationURL>http://localhost:45323/PaymentsService.svc</ServiceLocationURL>
-      <CachedDynamicPropName>AES.UniversalBank.Messaging.BrokerProcess.PaymentService.PaymentsService</CachedDynamicPropName>
-      <CachedAppSettingsObjectName>
-      </CachedAppSettingsObjectName>
-      <CachedSettingsPropName>
-      </CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
     <None Include="AES.UniversalBank.snk" />
@@ -152,17 +138,6 @@
       <Generator>BtsDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.odx</LastGenOutput>
     </None>
-    <None Include="Web References\PaymentService\PaymentsService.wsdl" />
-    <None Include="Web References\PaymentService\Reference.map">
-      <Generator>BtsDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.odx</LastGenOutput>
-    </None>
-    <Schema Include="Web References\PaymentService\Reference.xsd">
-      <DependentUpon>Reference.map</DependentUpon>
-      <TypeName>Reference</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.PaymentService</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
     <Schema Include="Web References\LoanService\Reference.xsd">
       <DependentUpon>Reference.map</DependentUpon>
       <TypeName>Reference</TypeName>
@@ -255,30 +230,6 @@
   <ItemGroup>
     <Map Include="ResponseToLoans.btm">
       <TypeName>ResponseToLoans</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.Maps</Namespace>
-      <SubType>Task</SubType>
-    </Map>
-  </ItemGroup>
-  <ItemGroup>
-    <XLang Include="Web References\PaymentService\Reference.odx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-      <TypeName>Reference</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerProcess.PaymentService</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
-    <XLang Include="GetPayments.odx">
-      <SubType>Task</SubType>
-      <TypeName>GetLoans_Copia</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerProcess</Namespace>
-    </XLang>
-  </ItemGroup>
-  <ItemGroup>
-    <Map Include="ResponseToPayments.btm">
-      <TypeName>ResponseToPayments</TypeName>
       <Namespace>AES.UniversalBank.Messaging.BrokerProcess.Maps</Namespace>
       <SubType>Task</SubType>
     </Map>

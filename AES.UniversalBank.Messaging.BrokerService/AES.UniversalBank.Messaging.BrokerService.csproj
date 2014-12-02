@@ -77,7 +77,6 @@
     <Content Include="App_Data\AES.UniversalBank.Messaging.BrokerSchemas.AccountInfoRequest.xsd" />
     <Content Include="App_Data\AES.UniversalBank.Messaging.BrokerSchemas.Customer.xsd" />
     <Content Include="App_Data\AES.UniversalBank.Messaging.BrokerSchemas.Loan.xsd" />
-    <Content Include="App_Data\AES.UniversalBank.Messaging.BrokerSchemas.Payment.xsd" />
     <Content Include="App_Data\Serialization.xsd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

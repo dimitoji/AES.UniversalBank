@@ -1,0 +1,37 @@
+﻿@model System.Collections.Generic.IList<AES.UniversalBank.Common.Entities.Payment>
+
+@{
+    ViewBag.Title = "UB - Pagos Automaticos";
+}
+
+<h2>Pagos Automáticos</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Pagos programados
+    </div>
+    @if (Model.Any())
+    {
+        <table class="table">
+            <tr>
+                <th>Descripcion</th>
+                <th>Tipo</th>
+            </tr>
+            @foreach (var payment in Model)
+            {
+                <tr>
+                    <td>@payment.Description</td>
+                    <td>Recurrente</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div class="panel-body">
+            <p class="lead">No tiene pagos programados.</p>
+        </div>
+    }
+</div>
+
+@Html.ActionLink("Crear nuevo Pago", "Create", null, new { @class = "btn btn-primary btn-sm"})

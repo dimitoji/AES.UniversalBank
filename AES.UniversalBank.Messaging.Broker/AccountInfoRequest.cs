@@ -10,7 +10,7 @@
             Account,
             Customer,
             Loan,
-            Payment,
+            Transaction
         }
     }
 }

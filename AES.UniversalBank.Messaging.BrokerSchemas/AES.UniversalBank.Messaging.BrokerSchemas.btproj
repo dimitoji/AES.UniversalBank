@@ -96,13 +96,6 @@
     </Schema>
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="Payment.xsd">
-      <SubType>Task</SubType>
-      <TypeName>Payment</TypeName>
-      <Namespace>AES.UniversalBank.Messaging.BrokerSchemas</Namespace>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
     <Schema Include="_PropertySchema.xsd">
       <TypeName>PropertySchema</TypeName>
       <Namespace>AES.UniversalBank.Messaging.BrokerSchemas.Properties</Namespace>

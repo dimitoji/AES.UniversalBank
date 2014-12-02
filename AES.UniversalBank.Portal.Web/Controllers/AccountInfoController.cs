@@ -10,10 +10,10 @@ namespace AES.UniversalBank.Portal.Web.Controllers
     [Authorize]
     public class AccountInfoController : _AuthorizedControllerBase
     {
-        private readonly BusinessLogic.IAccountsManager _accountsManager;
+        private readonly BusinessLogic.IAccountInfoManager _accountsManager;
 
         public AccountInfoController(
-            BusinessLogic.IAccountsManager accountsManager)
+            BusinessLogic.IAccountInfoManager accountsManager)
         {
             this._accountsManager = accountsManager;
         }
